@@ -6,7 +6,7 @@ Step-4 create a branch "git checkout -b sagar-frontend(write yours)"
 Step-5 push code to your repo make sure you pull the changes from main branch before start working. 
 # Project Name - WebCraft Frontend
 
-![Project Logo]([(https://cdn.discordapp.com/attachments/1134488959179825192/1134768843869409360/image_123986672.JPG)])
+![Project Logo](https://cdn.discordapp.com/attachments/1134488959179825192/1134768843869409360/image_123986672.JPG)
 
 ## Getting Started
 
