@@ -25,7 +25,7 @@ Change into the "webcraft-frontend" directory by running:
 cd webcraft-frontend
 ```
 
-###Step 3: Install Dependencies
+### Step 3: Install Dependencies
 
 Install the project dependencies using npm:
 
@@ -33,14 +33,14 @@ Install the project dependencies using npm:
 npm install
 ```
 
-###Step 4: Create a New Branch
+### Step 4: Create a New Branch
 Create a new branch for your work using a descriptive branch name, for example:
 
 ```bash
 git checkout -b sagar-frontend(make as your name)
 ```
 
-###Step 5: Push Your Code
+### Step 5: Push Your Code
 
 ```bash
 git add .
