@@ -47,6 +47,7 @@ git add .
 git commit -m "Your commit message"
 git push origin sagar-frontend
 ```
-Become a Legendary Contributor 🦄✨
+<h3>Become a Legendary Contributor 🦄✨</h3>
+<br>
 Are you eager to sprinkle more magic upon WebCraft Frontend? We wholeheartedly welcome your enchanting contributions! Simply fork the repository, concoct your magical changes, and wave your pull request wand. Our spell-checking wizards will review your magical concoction with joy!
 
