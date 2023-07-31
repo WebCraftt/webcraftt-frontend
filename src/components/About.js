@@ -1,5 +1,4 @@
 import Image from "next/image";
-import demo from "../constants/Images/demo.jpg";
 import React from "react";
 
 const About = () => {
