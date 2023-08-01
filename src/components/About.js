@@ -1,38 +1,24 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
 
 const About = () => {
-  const random =
-    " For those who are interested in finding random paragraphs, that's exactly what this webpage provides. If both a random word and a random sentence aren't quite long enough for your needs, then a random paragraph might be the perfect solution. Once you arrive at this page, you'll see a random paragraph. If you need another one, all you need to do is click on the button. If you happen to need several random paragraphs all at once, you can use this other paragraph generator. Below you can find a number of ways that this generator can be used.";
+
   return (
-    //Parent Container
-    <div className="flex min-h-[90vh] justify-center items-center px-4">
-      {/* Content Wrapper */}
-      <div className="grid lg:grid-cols-2 min-h-[50vh] w-full place-items-center">
-        {/* Text Grid */}
-        <div className="flex flex-col md:px-6 min-h-[90%] rounded-xl w-full justify-center py-4">
-          <text className="font-sans md:font-serif text-3xl mb-4 self-left ">
-            Paragraph Title
-          </text>
-          <text className="font-sans md:font-serif lg:text-xl text-left">
-            {random}
-          </text>
-          <button
-            className="w-fit p-3 rounded-lg self-left mt-5 mb-5 bg-[#1c4966]/[20]"
-            onClick={() => console.log("Button Works")}
-          >
-            Explore More
-          </button>
+    <div className="bg-white dark:bg-gray-900 h-screen flex justify-center items-center">
+      <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="mr-auto place-self-center lg:col-span-7">
+          <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Make Your Business One Step Higher With <span className="text-[#9dd4e8]">WebCraft</span></h1>
+          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">From checkout to global sales tax compliance, companies around the world use Flowbite to simplify their payment stack.</p>
+          <a href="#" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800 mr-3">
+            Get started
+            <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+          </a>
+          <a href="#" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            Start Explore
+          </a>
         </div>
-        {/* Image Grid */}
-        <div className="flex md:h-[90%] md:w-[90%] rounded-md w-full items-center">
-          {/* Image Wrapper */}
-          <div className="flex h-full overflow-hidden justify-center items-center rounded-xl">
-            <img
-              src="https://cdn.shopify.com/s/files/1/0306/6419/6141/articles/coding_languages.png?v=1619126283"
-              alt="Logo"
-            />
-          </div>
+        <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
+          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup" />
         </div>
       </div>
     </div>
