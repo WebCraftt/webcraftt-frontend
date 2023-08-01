@@ -5,8 +5,10 @@ const Layout = ({ children }) => {
     return (
         <div>
             <Navbar />
-            <div className="bg-white dark:bg-gray-900">
-                {children}
+            <div className='bg-white dark:bg-gray-900 '>
+                <div className="bg-white dark:bg-gray-900 container m-auto">
+                    {children}
+                </div>
             </div>
         </div>
     )
