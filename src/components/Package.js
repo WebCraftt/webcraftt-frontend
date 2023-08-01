@@ -4,7 +4,7 @@ import { PackageList } from "../constants/Data/PackageList";
 
 const Package = () => {
   return (
-    <div className="flex flex-col min-h-[90vh] px-4 justify-center items-center ">
+    <div className="flex flex-col min-h-[100vh] px-4 justify-center items-center ">
       <h1 className="max-w-2xl mb-10 text-4xl text-center font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
         Our <span className="text-[#9dd4e8]">Packages</span>
       </h1>

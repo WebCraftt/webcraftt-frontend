@@ -4,7 +4,7 @@ const PackageItem = (props) => {
   const description = props.description;
   return (
     <div
-      className="group flex flex-col bg-[#FFFFFF] p-4 rounded-[15px] 
+      className="group flex flex-col bg-[#FFFFFF] py-3 px-2 rounded-[15px] 
     h-[520px] lg:min-w-[90%] lg:max-w-[80%] md:min-w-[90%] md:max-w-[90%] w-[95%]
      sm:mt-5 sm:mx-5 lg:mt-0 my-2 items-center lg:transition-[3s] 
      lg:hover:scale-[110%] text-[#1e2338] lg:hover:bg-[#1e2338] lg:hover:text-white"
@@ -12,11 +12,11 @@ const PackageItem = (props) => {
       <div className="min-w-[70%] rounded-lg flex justify-center py-3 px-4 self-start text-lg">
         <b> {props.title} </b>
       </div>
-      <div className="min-w-[50%] rounded-lg flex justify-center py-3 px-4 mb-4 lg:group-hover:text-[#7744d9] text-5xl">
+      <div className="min-w-[50%] rounded-lg flex justify-center py-2 px-4 mb-4 lg:group-hover:text-[#7744d9] text-5xl">
         <b> {props.price} </b>
         <span className="text-sm self-end">/month</span>
       </div>
-      <div className="w-fit rounded-lg py-2 px-4 mb-2  w-full flex-1 overflow-auto">
+      <div className="rounded-lg py-2 px-4 mb-2  w-full flex-1 overflow-auto">
         {description.map((item, key) => {
           return (
             <li key={key} className="flex items-start">
