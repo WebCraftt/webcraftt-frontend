@@ -18,7 +18,7 @@ const About = () => {
           </a>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
-          <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/hero/phone-mockup.png" alt="mockup" />
+          <img src="https://mambaui.com/assets/svg/Business_SVG.svg" alt="mockup" />
         </div>
       </div>
     </div>
