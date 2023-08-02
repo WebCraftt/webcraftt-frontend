@@ -4,6 +4,7 @@ import Package from "@/src/components/Package";
 import Testimonials from "@/src/components/Testimonials";
 import Team from "@/src/components/Team";
 import ContactUs from "@/src/components/ContactUs";
+import Footer from "@/src/components/Footer";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       {/* Review */}
       <Testimonials />
       <ContactUs />
+      <Footer />
     </Layout>
   );
 }
