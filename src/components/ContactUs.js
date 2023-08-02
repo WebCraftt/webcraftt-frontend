@@ -3,13 +3,15 @@ import React from "react";
 const ContactUs = () => {
   return (
     <div class="relative flex flex-col items-top justify-center h-max bg-white dark:bg-gray-900 sm:items-center sm:pt-0 py-10">
-      <h1 className="max-w-2xl mb-14 text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+      <h1
+        className="max-w-2xl mb-14 text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl 
+      xl:text-6xl dark:text-white"
+      >
         Contact <span className="text-[#9dd4e8]">Us</span>
       </h1>
-
       <div
         class="max-w-6xl mx-auto sm:px-6 lg:px-8 rounded-lg 
-    lg:hover:shadow-lg lg:hover:shadow-[#7744d9] lg:hover:border-[#7744d9]"
+    lg:hover:shadow-[0_0px_15px_10px_rgba(77,44,99,0.3)] lg:hover:border lg:hover:border-[#7744d9]"
       >
         <div class="mt-8 overflow-hidden">
           <div class="grid grid-cols-1 md:grid-cols-2">
