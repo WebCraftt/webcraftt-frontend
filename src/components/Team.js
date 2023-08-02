@@ -40,7 +40,7 @@ const Team = () => {
         {TeamMembersList.map((member, key) => {
           return (
             <TeamCard
-              key={key}
+              key={member.name}
               image={member.image}
               name={member.name}
               role={member.role}
