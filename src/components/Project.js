@@ -96,12 +96,18 @@ const Project = () => {
 
   return (
     <div className="w-full mx-auto rounded-t-xl relative" id="Portfolio">
-      <h1
-        className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold 
-      tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
+      <div
+        data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="1500"
       >
-        Our <span className="text-[#9dd4e8]">Portfolio</span>
-      </h1>
+        <h1
+          className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold 
+      tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
+        >
+          Our <span className="text-[#9dd4e8]">Portfolio</span>
+        </h1>
+      </div>
       <p className="text-center sm:w-96 m-auto">
         Lorem ipsum dolor quidem vitae porro quis nobis enim voluptates suscipit
         rerum nam?
