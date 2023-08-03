@@ -1,5 +1,5 @@
 import shuja from "../Images/Team Members/Shuja Saqib.JPEG";
-import user from "../Images/Team Members/User.JPEG";
+import user from "../Images/Team Members/User.jpeg";
 export const TeamMembersList = [
   {
     image: user,
