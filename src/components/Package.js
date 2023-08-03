@@ -10,9 +10,10 @@ const Package = () => {
       </h1>
 
       <div className="grid lg:grid-cols-4 sm:grid-cols-2 w-full place-items-center p-2">
-        {PackageList.map((item) => {
+        {PackageList.map((item, index) => {
           return (
             <PackageItem
+              key={index}
               title={item.title}
               price={item.price}
               description={item.desc}

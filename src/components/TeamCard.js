@@ -48,7 +48,7 @@ const TeamCard = (props) => {
         {/* Linked In */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h6 w-6 m-2 text-[#0A66C2] lg:transition-[3s]  lg:hover:scale-[130%]"
+          className="h6 w-6 m-2 text-[#0A66C2] lg:transition-[3s]  lg:hover:scale-[130%]"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -57,7 +57,7 @@ const TeamCard = (props) => {
         {/* Github */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 m-2 text-gray-500 lg:transition-[3s]  lg:hover:scale-[130%]"
+          className="h-6 w-6 m-2 text-gray-500 lg:transition-[3s]  lg:hover:scale-[130%]"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -66,7 +66,7 @@ const TeamCard = (props) => {
         {/* Twitter */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 m-2 text-[#00ACEE] lg:transition-[3s]  lg:hover:scale-[130%]"
+          className="h-6 w-6 m-2 text-[#00ACEE] lg:transition-[3s]  lg:hover:scale-[130%]"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -76,7 +76,7 @@ const TeamCard = (props) => {
         {/* Instagram */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6 m-2 text-pink-500 lg:transition-[3s]  lg:hover:scale-[130%]"
+          className="h-6 w-6 m-2 text-pink-500 lg:transition-[3s]  lg:hover:scale-[130%]"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
