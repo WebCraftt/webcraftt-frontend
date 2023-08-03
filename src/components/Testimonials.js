@@ -1,42 +1,67 @@
-import Image from 'next/image';
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import React, { useCallback, useRef } from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import Image from "next/image";
+import DotShape from "./Dotshape";
 
-const Testimonials = () => {
+const Testimonial = () => {
+    const sliderRef = useRef(null);
+
+    const handlePrev = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.previous();
+    }, []);
+
+    const handleNext = useCallback(() => {
+        if (!sliderRef.current) return;
+        sliderRef.current.next();
+    }, []);
+
     const testimonials = [
         {
-            quote:
-                '"WebCraft is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."',
-            author: 'Micheal Gough',
-            position: 'CEO at Google',
-            image: 'https://randomuser.me/api/portraits/men/75.jpg'
+            image: "https://randomuser.me/api/portraits/men/75.jpg",
+            reviewImg: "https://cdn1.designhill.com/assets/dh/images/designhill_logo.svg?ver=2.12.52",
+            reviewAlt: "lineicon",
+            details:
+                "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
+            name: "Larry Diamond",
+            position: "Chief Executive Officer.",
+            rating: 5,
         },
         {
-            quote:
-                '"WebCraft is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."',
-            author: 'Micheal Gough',
-            position: 'CEO at Google',
-            image: 'https://randomuser.me/api/portraits/men/55.jpg'
+            image: "https://randomuser.me/api/portraits/men/55.jpg",
+            reviewImg: "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104652/799.png",
+            reviewAlt: "lineicon",
+            details:
+                "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
+            name: "Larry Diamond",
+            position: "Chief Executive Officer.",
+            rating: 5,
         },
         {
-            quote:
-                '"WebCraft is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."',
-            author: 'Micheal Gough',
-            position: 'CEO at Google',
-            image: 'https://randomuser.me/api/portraits/men/95.jpg'
+            image: "https://randomuser.me/api/portraits/men/73.jpg",
+            reviewImg: "https://cdn1.designhill.com/assets/dh/images/designhill_logo.svg?ver=2.12.52",
+            reviewAlt: "lineicon",
+            details:
+                "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
+            name: "Larry Diamond",
+            position: "Chief Executive Officer.",
+            rating: 5,
         },
         {
-            quote:
-                '"WebCraft is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."',
-            author: 'Micheal Gough',
-            position: 'CEO at Google',
-            image: 'https://randomuser.me/api/portraits/men/65.jpg'
+            image: "https://randomuser.me/api/portraits/men/74.jpg",
+            reviewImg: "https://cdn1.designhill.com/assets/dh/images/designhill_logo.svg?ver=2.12.52",
+            reviewAlt: "lineicon",
+            details:
+                "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
+            name: "Larry Diamond",
+            position: "Chief Executive Officer.",
+            rating: 5,
         },
         // Add more testimonials here...
     ];
 
     const carouselOptions = {
-        // Customize carousel options here
         responsive: {
             desktop: {
                 breakpoint: { max: 3000, min: 1024 },
@@ -54,60 +79,66 @@ const Testimonials = () => {
                 slidesToSlide: 1,
             },
         },
-        Infinity: true,
+        infinite: true,
         autoPlay: true,
         autoPlaySpeed: 1000, // 1 second
     };
 
     return (
-        <div className="bg-white dark:bg-gray-900 h-[90vh] flex items-center">
-            <div>
-                <h1 className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">What Client Say About <span className="text-[#9dd4e8]">WebCraft</span></h1>
-                <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
-                    <Carousel {...carouselOptions}>
-                        {testimonials.map((testimonial, index) => (
-                            <div key={index} className="max-w-screen-md mx-auto px-2 md:px-0">
-                                <svg
-                                    className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
-                                    viewBox="0 0 24 27"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
-                                        fill="currentColor"
-                                    />
-                                </svg>
-                                <blockquote>
-                                    <p className="text-xl font-medium text-gray-900 dark:text-white">
-                                        {testimonial.quote}
-                                    </p>
-                                </blockquote>
-                                <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                                    <div className="relative w-12 h-12 overflow-hidden rounded-full">
+        <div className="pt-20 pb-20 lg:pt-[120px] lg:pb-[120px] bg-white dark:bg-gray-900">
+            <h1 className="max-w-xl mb-5 mx-auto text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">What Client Say About <span className="text-[#9dd4e8]">WebCraft</span></h1>
+            <br />
+            <div className="container mx-auto">
+                <Carousel {...carouselOptions} ref={sliderRef}>
+                    {testimonials.map((testimonial, index) => (
+                        <div key={index} className="relative flex justify-center">
+                            <div className="relative w-full pb-16 md:w-11/12 lg:w-10/12 xl:w-8/12 xl:pb-0">
+                                <div className="w-full items-center md:flex">
+                                    <div className="relative mb-12 w-[90%] max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
                                         <Image
                                             src={testimonial.image}
-                                            alt="profile picture"
-                                            layout="fill"
-                                            objectFit="cover"
+                                            alt="image"
+                                            layout="responsive"
+                                            width={310}
+                                            height={400}
                                         />
+
+                                        <span className="absolute -bottom-6 -right-6 z-[-1]">
+                                            <svg
+                                                width="64"
+                                                height="64"
+                                                viewBox="0 0 64 64"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                {/* Add the path for your dot shape */}
+                                            </svg>
+                                        </span>
                                     </div>
-                                    <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                                        <div className="pr-3 font-medium text-gray-900 dark:text-white">
-                                            {testimonial.author}
-                                        </div>
-                                        <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
-                                            {testimonial.position}
+                                    <div className="w-full">
+                                        <div>
+                                            <DotShape rating={testimonial.rating} />
+
+                                            <br />
+                                            <div className="mb-7">
+                                                <img src={testimonial.reviewImg} className="w-36" alt={testimonial.reviewAlt} />
+                                            </div>
+                                            <p className="text-body-color mb-11 text-base font-medium italic sm:text-lg">
+                                                {testimonial.details}
+                                            </p>
+                                            <h4 className="text-dark text-xl font-semibold">{testimonial.name}</h4>
+                                            <p className="text-body-color text-base">{testimonial.position}</p>
                                         </div>
                                     </div>
-                                </figcaption>
+                                </div>
                             </div>
-                        ))}
-                    </Carousel>
-                </div>
+                        </div>
+                    ))}
+                </Carousel>
+
             </div>
         </div>
     );
 };
 
-export default Testimonials;
+export default Testimonial;

@@ -70,7 +70,7 @@ const Project = () => {
             <br />
             <Carousel responsive={responsive} infinite={true} autoPlay={true} autoPlaySpeed={5000}>
                 {projects?.map((project, index) => (
-                    <div key={index} className="carousel-item mx-auto w-full">
+                    <div key={index} className="carousel-item mx-auto flex w-[60%]">
                         <div className="rounded-lg overflow-hidden w-[450px] m-auto bg-white dark:bg-gray-800">
                             <img
                                 src={project.imageUrlDark}
@@ -78,7 +78,7 @@ const Project = () => {
                                 alt=""
                             />
                         </div>
-                        <div className="project-description w-[450px] m-auto absolute top-[59%] left-[-67.59%] bg-gray-800 p-5 hover:bg-blue-950">
+                        <div className="project-description w-[450px] m-auto  top-[59%] left-[-67.59%] bg-gray-800 p-5 hover:bg-blue-950">
                             <h2 className="text-3xl font-bold">{project.title}</h2>
                             <p className="text-gray-500">{project.description}</p>
                             <br />
