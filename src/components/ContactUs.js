@@ -2,8 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div className="h-[80vh]">
-
+    <div className="h-[80vh]" id="Contact-Us">
       <div className="relative flex flex-col items-top justify-center h-max bg-white dark:bg-gray-900 sm:items-center sm:pt-0 py-10">
         <h1
           className="max-w-2xl mb-14 text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl 
@@ -203,7 +202,6 @@ const ContactUs = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

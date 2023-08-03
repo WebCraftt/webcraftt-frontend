@@ -25,7 +25,7 @@ const Team = () => {
     },
   };
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-fit py-6 mb-4 ">
+    <div className="bg-white dark:bg-gray-900 min-h-fit py-6 mb-4 " id="Team">
       <h1
         className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold 
       tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
