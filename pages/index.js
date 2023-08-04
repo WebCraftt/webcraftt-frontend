@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <Layout>
       <Link
-        href="https://wa.me/923154549100?text=I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20know%20more."
+        href="https://wa.me/995592005978?text=I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20know%20more."
         target="_blank"
       >
         <svg
@@ -32,11 +32,9 @@ export default function Home() {
         </svg>
       </Link>
       <About />
-      {/* <Package /> */}
       <Package />
       <Team />
       <Project />
-      {/* Review */}
       <Testimonials />
       <ContactUs />
       <Footer />
