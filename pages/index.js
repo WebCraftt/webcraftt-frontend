@@ -17,7 +17,8 @@ export default function Home() {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="icon icon-tabler icon-tabler-brand-whatsapp text-white fixed bottom-0 right-0 mb-5 mr-5 h-[60px] sm:h-20 z-20 animate-bounce"
+          className="icon icon-tabler icon-tabler-brand-whatsapp 
+          text-white fixed bottom-0 right-0 mb-5 mr-5 h-[55px] z-20 animate-bounce"
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
