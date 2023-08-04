@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "../public/styles.css";
 import Head from "next/head";
 import AOS from "aos";
 import "aos/dist/aos.css";

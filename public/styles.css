@@ -1,0 +1,15 @@
+/* Hide the scrollbar track */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Hide the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: azure;
+  border-radius: 40px;
+}
+
+/* Hide the scrollbar corner */
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
