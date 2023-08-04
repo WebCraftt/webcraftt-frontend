@@ -28,6 +28,12 @@ const Footer = () => {
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <a href="https://flowbite.com/" className="hover:underline">
+                    {/* <a
+                    href="https://api.whatsapp.com/send?phone=+923184387069"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                  > */}
                     Web Apps
                   </a>
                 </li>
