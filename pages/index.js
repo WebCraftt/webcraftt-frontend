@@ -12,12 +12,13 @@ export default function Home() {
   return (
     <Layout>
       <Link
-        href="https://wa.me/923154549100?text=I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20know%20more."
+        href="https://wa.me/995592005978?text=I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20know%20more."
         target="_blank"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="icon icon-tabler icon-tabler-brand-whatsapp text-white fixed bottom-0 right-0 mb-5 mr-5 h-[60px] sm:h-20 z-20 animate-bounce"
+          className="icon icon-tabler icon-tabler-brand-whatsapp 
+          text-white fixed bottom-0 right-0 mb-5 mr-5 h-[55px] z-20 animate-bounce"
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
@@ -31,11 +32,9 @@ export default function Home() {
         </svg>
       </Link>
       <About />
-      {/* <Package /> */}
       <Package />
       <Team />
       <Project />
-      {/* Review */}
       <Testimonials />
       <ContactUs />
       <Footer />
