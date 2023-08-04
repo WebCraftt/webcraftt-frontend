@@ -2,12 +2,14 @@ import logo from "../constants/Images/WebCraft.png";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 
 const navigation = [
-  { name: "About", href: "#", current: true },
-  { name: "Services", href: "#", current: false },
-  { name: "Team", href: "#", current: false },
-  { name: "Contact Us", href: "#", current: false },
+  { name: "About", href: "#HeroPage", current: true },
+  { name: "Services", href: "#Packages", current: false },
+  { name: "Team", href: "#Team", current: false },
+  { name: "Portfolio", href: "#Portfolio", current: false },
+  { name: "Contact Us", href: "#Contact-Us", current: false },
   { name: "Login", href: "#", current: false },
 ];
 
@@ -36,24 +38,29 @@ export default function Navbar() {
               </div>
               <div className="flex items-center w-full justify-end sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image className="h-20 w-auto" src={logo} alt="WebCraft" />
+                  <Image
+                    className="h-20 w-auto"
+                    src={logo}
+                    alt="WebCraft"
+                    priority
+                  />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-bold"
+                          "rounded-md px-3 py-2 text-sm font-bold "
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>

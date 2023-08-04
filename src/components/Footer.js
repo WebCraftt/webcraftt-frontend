@@ -9,12 +9,12 @@ const Footer = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com/" className="flex items-center">
-              {/* <img
-                src="https://flowbite.com/docs/images/logo.svg"
-                className="h-8 mr-3"
-                alt="FlowBite Logo"
-              /> */}
-              <Image src={logo} className="h-20 w-auto" />
+              <Image
+                priority
+                src={logo}
+                alt="WebCraft"
+                className="h-20 w-auto"
+              />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-[#9dd4e8]">
                 WebCraft
               </span>
@@ -32,7 +32,10 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://tailwindcss.com/" className="hover:underline">
+                  <a
+                    href="https://tailwindcss.com/"
+                    className="hover:underline"
+                  >
                     Mobile Apps
                   </a>
                 </li>
