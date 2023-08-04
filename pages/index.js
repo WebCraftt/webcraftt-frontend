@@ -6,11 +6,15 @@ import Team from "@/src/components/Team";
 import ContactUs from "@/src/components/ContactUs";
 import Footer from "@/src/components/Footer";
 import Project from "@/src/components/Project";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <Layout>
-      <a href="https://www.google.com" target="_blank">
+      <Link
+        href="https://wa.me/923154549100?text=I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20know%20more."
+        target="_blank"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="icon icon-tabler icon-tabler-brand-whatsapp text-white fixed bottom-0 right-0 mb-5 mr-5 h-[60px] sm:h-20 z-20 animate-bounce"
@@ -25,7 +29,7 @@ export default function Home() {
           <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
           <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
         </svg>
-      </a>
+      </Link>
       <About />
       {/* <Package /> */}
       <Package />
