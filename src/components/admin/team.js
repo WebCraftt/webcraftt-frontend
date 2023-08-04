@@ -1,8 +1,9 @@
 'use client'
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const team =()=>{
-
+    const router = useRouter();
     // State update for the form fields
     const [fieldVal,setFieldVal] = useState({
         name:{
@@ -247,6 +248,7 @@ const team =()=>{
             position: fieldVal.position
         }
         console.log(teamsForm);
+        router.back();
     }
 
     return(

@@ -1,12 +1,33 @@
+'use client'
 import AdminLayout from '@/src/layout/AdminLayout'
 import React from 'react'
-import Team from './team/team'
+import { useState } from 'react';
+import Link from 'next/link';
+import LeftNavBar from '../../src/components/admin/leftNavBar/leftNavBar'
+import DataSegment from '../../src/components/admin/dataSegment';
+import ServiceManager from '../../src/components/admin/serviceManage';
 
 const index = () => {
+
+  const [selectedSegment,setSegment] = (useState('Team'))
+
+  const segmentChangeHandler =(changeSegment)=>{
+
+    setSegment((prevState)=>{
+      return changeSegment;
+    })
+  }
+
   return (
     <AdminLayout>
-      <h1>Admin</h1>
-      <Team></Team>
+      <div className='grid grid-rows-1 grid-cols-6 h-full'>
+        <div className='col-span-1...'>
+          <LeftNavBar changeSegment={segmentChangeHandler}></LeftNavBar>
+        </div>
+        <div className='col-span-5 px-12 py-12 bg-white'>
+          {selectedSegment && <DataSegment title={selectedSegment}></DataSegment>}
+        </div>
+      </div>
     </AdminLayout>
   )
 }

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 
 const AdminLayout = ({ children }) => {
     return (
-        <div>
+        <div id='adminPanelWrapper' className='h-screen'>
             {children}
         </div>
     )
