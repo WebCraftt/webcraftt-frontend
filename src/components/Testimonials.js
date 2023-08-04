@@ -106,7 +106,7 @@ const Testimonial = () => {
                     <Image
                       src={testimonial.image}
                       alt="image"
-                      layout="responsive"
+                      // layout="responsive"
                       width={310}
                       height={400}
                     />

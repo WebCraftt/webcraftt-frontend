@@ -38,7 +38,12 @@ export default function Navbar() {
               </div>
               <div className="flex items-center w-full justify-end sm:justify-between">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image className="h-20 w-auto" src={logo} alt="WebCraft" />
+                  <Image
+                    className="h-20 w-auto"
+                    src={logo}
+                    alt="WebCraft"
+                    priority
+                  />
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
