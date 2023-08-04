@@ -3,9 +3,8 @@ import AdminLayout from '@/src/layout/AdminLayout'
 import React from 'react'
 import { useState } from 'react';
 import Link from 'next/link';
-import LeftNavBar from '../../src/components/admin/leftNavBar/leftNavBar'
+import LeftNavBar from '../../src/components/admin/leftNavBar'
 import DataSegment from '../../src/components/admin/dataSegment';
-import ServiceManager from '../../src/components/admin/serviceManage';
 
 const index = () => {
 

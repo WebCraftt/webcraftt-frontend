@@ -1,177 +1,48 @@
-import Card from './card.js'
+'use client'
+import { useForm} from 'react-hook-form';
 
-const service = (prop)=>{
 
-    const segmentData = [
-        {
-            id: 1,
-            fields:{
-                name:'Service 1',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 2,
-            fields:{
-                name:'Service 2',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 3,
-            fields:{
-                name:'Service 3',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 4,
-            fields:{
-                name:'Service 4',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 5,
-            fields:{
-                name:'Service 5',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 6,
-            fields:{
-                name:'Service 1',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 7,
-            fields:{
-                name:'Service 2',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 8,
-            fields:{
-                name:'Service 3',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 9,
-            fields:{
-                name:'Service 4',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 10,
-            fields:{
-                name:'Service 5',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 11,
-            fields:{
-                name:'Service 1',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 12,
-            fields:{
-                name:'Service 2',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 13,
-            fields:{
-                name:'Service 3',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 14,
-            fields:{
-                name:'Service 4',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 15,
-            fields:{
-                name:'Service 5',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        }
-    ]
-
-    const addService=()=>{
-
+const service =(props)=>{
+    const formVal = {...props.formVal}
+    const {register,handleSubmit} = useForm();
+    const onSubmit = data=>{
+        console.log(data)
     }
 
     return(
-        <div className="flex flex-col rounded-2xl h-full">
-            <div className="flex justify-between mb-4">
-                <span className='text-xl font-semibold text-violet-800'>{prop.title}</span>
-                <button className='w-1/6 h-8 bg-orange-400 rounded-md shadow-md hover:bg-orange-500 active:scale-95 active:shadow-sm' onClick={addService}>Add</button>    
+        <div className='px-16'>
+            <div className='text-xl font-bold mb-8'>
+                <span>Services</span>
             </div>
-            <div className='grid gap-8 grid-rows-{n} px-8 py-8 overflow-y-auto scroll-smooth overflow-x-hidden grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))]'>
-                {segmentData.map((segment=>{
-                    return(
-                        <Card key={segment.id} id={segment.id} fields={...segment.fields}></Card>
-                    )
-                }))}
-            </div>
+             <form onSubmit={handleSubmit(onSubmit)}>
+                <div className='flex justify-between w-full'>
+                    <div className='flex flex-col w-5/12 my-8'>
+                        <label>Name</label>
+                        <input defaultValue={formVal.name?formVal.name:''} type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("serviceName",{required:true})}></input>
+                    </div>
+                    <div className='flex flex-col w-5/12 my-8'>
+                        <label>Details</label>
+                        <input defaultValue={formVal.details?formVal.details:''} type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("serviceDetails",{required:true})}></input>
+                    </div>
+                </div>
+                <div className='flex justify-between w-full'>
+                    <div className='flex flex-col w-5/12 my-8'>
+                        <label>Discount</label>
+                        <input defaultValue={formVal.discount?formVal.discount:''} type="number" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("serviceDiscount",{required:true})}></input>
+                    </div>
+                    <div className='flex flex-col w-5/12 my-8'>
+                        <label>Price</label>
+                        <input defaultValue={formVal.price?formVal.price:''} type="number" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("servicePrice",{required:true})}></input>
+                    </div>
+                </div>
+                <div className='flex justify-start w-full'>
+                    <div className='flex flex-col my-8 w-4/12'>
+                        <label>Image</label>
+                        <input type="file" className='rounded-t-lg rounded-b-lg h-10' {...register("serviceImg",{required:true})}></input>
+                    </div>
+                </div>
+                <button className='w-1/6 h-8 bg-green-400 rounded-md float-right shadow-md hover:bg-green-500 active:scale-95 active:shadow-sm' type='submit'>Add</button>
+            </form>
         </div>
     )
 }

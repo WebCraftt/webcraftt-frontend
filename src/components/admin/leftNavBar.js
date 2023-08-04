@@ -35,7 +35,7 @@ const leftNavBar = (props)=>{
             })}
 
             <div className="absolute bottom-8 left-36">
-                <img height="5rem" className="" src="./constants/Images/WebCraft.png"></img>
+                <img height="5rem" className="" src="./src/constants/Images/WebCraft.png"></img>
             </div>
 
         </div>

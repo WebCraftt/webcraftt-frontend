@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Manage from './manage';
 
 const Modal = ({ onClose, children, title }) => {
     const handleCloseClick = (e) => {
@@ -17,8 +16,7 @@ const Modal = ({ onClose, children, title }) => {
                             x
                         </a>
                     </div>
-                    <Manage></Manage>
-                    <div className="pt-10">{children}</div>
+                    <div>{children}</div>
                 </div>
             </div>
         </div>

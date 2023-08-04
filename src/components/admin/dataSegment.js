@@ -1,10 +1,31 @@
 import { useState } from 'react';
 import Card from './card.js'
 import Modal from './modal';
+import Team from './team';
+import Service from './service';
+import Review from './review';
+import Project from './project';
+import fetchApi from '../../services/api';
 
-const dataSegment = (prop)=>{
+const dataSegment = (props)=>{
+
+    const selectedSegment = props.title
 
     const [showModal,setShowModal] = useState(false)
+
+    let url = ``
+
+    if(selectedSegment == 'Team'){
+        url = '/teams'
+    }else if(selectedSegment == "Service"){
+        url = '/services'
+    }else if(selectedSegment == "Review"){
+        url = '/reviews'
+    }else if(selectedSegment == "Project"){
+        url = '/projects'
+    }
+
+    // const segmentData = fetchApi(url)
 
     const segmentData = [
         {
@@ -76,86 +97,6 @@ const dataSegment = (prop)=>{
                 discount: '',
                 price:''
             }
-        },
-        {
-            id: 8,
-            fields:{
-                name:'Service 3',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 9,
-            fields:{
-                name:'Service 4',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 10,
-            fields:{
-                name:'Service 5',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 11,
-            fields:{
-                name:'Service 1',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 12,
-            fields:{
-                name:'Service 2',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 13,
-            fields:{
-                name:'Service 3',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 14,
-            fields:{
-                name:'Service 4',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 15,
-            fields:{
-                name:'Service 5',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
         }
     ]
 
@@ -168,17 +109,21 @@ const dataSegment = (prop)=>{
     return(
         <div className="flex flex-col rounded-2xl h-full">
             <div className="flex justify-between mb-4">
-                <span className='text-xl font-semibold text-violet-800'>{prop.title}</span>
+                <span className='text-xl font-semibold text-violet-800'>{selectedSegment}</span>
                 <button className='w-1/6 h-8 bg-orange-400 rounded-md shadow-md hover:bg-orange-500 active:scale-95 active:shadow-sm' onClick={addService}>Add</button>    
             </div>
             <div className='grid gap-8 grid-rows-{n} px-8 py-8 overflow-y-auto scroll-smooth overflow-x-hidden grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))]'>
                 {segmentData.map((segment=>{
                     return(
-                        <Card key={segment.id} id={segment.id} fields={...segment.fields}></Card>
+                        <Card key={segment.id} id={segment.id} fields={...segment.fields} segment={selectedSegment}></Card>
                     )
                 }))}
             </div>
             {showModal && <Modal onClose={() => setShowModal(false)}>
+                            {selectedSegment == "Team" && <Team btn="Add"></Team>}
+                            {selectedSegment == "Service" && <Service btn="Add"></Service>}
+                            {selectedSegment == "Review" && <Review btn="Add"></Review>}
+                            {selectedSegment == "Project" && <Project btn="Add"></Project>}
                         </Modal>
             }
         </div>
