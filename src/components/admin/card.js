@@ -42,18 +42,20 @@ const card = (props)=>{
                 <button className="w-1/6 h-8 bg-green-400 rounded-md mr-4 shadow-md hover:bg-green-500 active:scale-95 active:shadow-sm" onClick={(e)=>editRecord(e,props.id)}>Edit</button>
                 <button className="w-1/6 h-8 bg-red-400 rounded-md shadow-md hover:bg-red-500 active:scale-95 active:shadow-sm" onClick={(e)=>deleteRecord(e,props.id)}>Delete</button>
             </div>
-            {showModal && <Modal onClose={() => setShowModal(false)}>
+            {showModal && <Modal onClose={() => setShowModal(false)} classes=''>
 
                             {/* Edit modal */}
                             {selectedSegment == "Team" && <Team btn="Update" formVal={...cardObj}></Team>}
                             {selectedSegment == "Service" && <Service btn="Update" formVal={...cardObj}></Service>}
                             {selectedSegment == "Review" && <Review btn="Update" formVal={...cardObj}></Review>}
                             {selectedSegment == "Project" && <Project btn="Update" formVal={...cardObj}></Project>}
-
-                            {/* Delete modal */}
-                            {showDeleteModal === true && <DeleteRecord></DeleteRecord>}
                         </Modal>
             }
+
+            {showDeleteModal && <Modal onClose={() => setDeleteShowModal(false)} classes={{dimensionClass:'w-1/5 h-1/5'}}>
+                                {/* Delete modal */}
+                                {<DeleteRecord></DeleteRecord>}
+                                </Modal>}
         </div>
     )
 }

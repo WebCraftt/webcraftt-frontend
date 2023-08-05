@@ -119,7 +119,7 @@ const dataSegment = (props)=>{
                     )
                 }))}
             </div>
-            {showModal && <Modal onClose={() => setShowModal(false)}>
+            {showModal && <Modal onClose={() => setShowModal(false)} classes=''>
                             {selectedSegment == "Team" && <Team btn="Add"></Team>}
                             {selectedSegment == "Service" && <Service btn="Add"></Service>}
                             {selectedSegment == "Review" && <Review btn="Add"></Review>}

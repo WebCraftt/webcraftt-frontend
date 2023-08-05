@@ -28,7 +28,6 @@ const leftNavBar = (props)=>{
             {links.map((link)=>{
                 return(
                     <div onClick={()=>segmentNameHandler(link.title)} key={link.title} className="h2 my-4 px-3 py-2 text-slate-200 rounded-md text-sm font-semibold cursor-pointer hover:bg-gray-200 hover:text-slate-600">
-                        {/* <span>{link.title}</span> */}
                         <a href="#">{link.title}</a>
                     </div>
                 )
