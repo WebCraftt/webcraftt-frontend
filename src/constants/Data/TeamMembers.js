@@ -1,12 +1,13 @@
 import shuja from "../Images/Team Members/Shuja Saqib.JPEG";
 import user from "../Images/Team Members/User.jpeg";
+import sagar from "../Images/Team Members/Sagar.png";
 export const TeamMembersList = [
   {
-    image: user,
-    name: "Sapar",
-    role: "Team Leader",
+    image: sagar,
+    name: "Sagar D.",
+    role: "Team Lead & Lead Developer",
     email:
-      "Sapar is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, HTML, CSS and Laravel Php.",
+      "Sapar is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, Node, Mongo & Express",
   },
   {
     image: user,
