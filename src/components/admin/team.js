@@ -1,11 +1,42 @@
 'use client'
+import { useState } from 'react';
 import { useForm} from 'react-hook-form';
 
 const team =(props)=>{
     const formVal = {...props.formVal}
     const {register,handleSubmit} = useForm();
+
+    const [showModal,setShowModal] = useState(false)
+    const [isLoading,setLoading] = useState(false)
+    const [hasError,setHasError] = useState(false)
+
+    const postTeamData = async()=>{
+        try{
+            setLoading(true)
+            setHasError(false)
+    
+            const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json',{
+                type: 'POST'
+            })
+            if(!response.status){
+                setHasError(true)
+                throw new Error('Something went wrong')
+            }
+            const jsonParse = await response.json();
+            // console.log(jsonParse)
+        }
+        catch{
+            setHasError(true)
+        }
+        setLoading(false)
+    }; 
+
     const onSubmit = data=>{
-        console.log(data)
+        debugger
+        props.presentState('Loading');
+        setTimeout(()=>{
+            props.presentState('Team');
+        },1000)
     }
 
     return(

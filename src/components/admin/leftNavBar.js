@@ -1,5 +1,11 @@
 'use client'
 import { useState } from "react"
+import Image from 'next/image';
+import Logo from '../../assets/images/logo.jpeg'
+
+const imageLoader = ({ src, width, quality }) => {
+    return `localhost:3000/src/assets/images/ogo.jpeg`
+}
 
 const leftNavBar = (props)=>{
 
@@ -33,8 +39,15 @@ const leftNavBar = (props)=>{
                 )
             })}
 
-            <div className="absolute bottom-8 left-36">
-                <img height="5rem" className="" src="./src/constants/Images/WebCraft.png"></img>
+            <div className="absolute bottom-8 left-32">
+                <Image
+                src={Logo}
+                width={50}
+                height={50}
+                alt="Picture of the author"
+                onClick={()=>segmentNameHandler('Team')}
+                className="cursor-pointer"
+                />
             </div>
 
         </div>

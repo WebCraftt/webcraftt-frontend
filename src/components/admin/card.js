@@ -29,8 +29,18 @@ const card = (props)=>{
         })
     }
 
+    const closeDeleteRecord=()=>{
+        setDeleteShowModal((prevState)=>{
+            return false
+        })
+    }
+
+    const updateRecordStatus = (segment)=>{
+        props.recordUpdated(segment)
+    }
+
     return(
-        <div className="rounded-3xl shadow-md px-8 py-8 bg-slate-100 hover:scale-105" key={props.id}>
+        <div className="rounded-3xl shadow-md px-8 py-8 bg-white hover:scale-105" key={props.id}>
             {Object.entries(cardObj).map((obj)=>{
                 return (
                     <div key={obj[0]}>
@@ -45,7 +55,7 @@ const card = (props)=>{
             {showModal && <Modal onClose={() => setShowModal(false)} classes=''>
 
                             {/* Edit modal */}
-                            {selectedSegment == "Team" && <Team btn="Update" formVal={...cardObj}></Team>}
+                            {selectedSegment == "Team" && <Team btn="Update" formVal={...cardObj} presentState={(segment)=>updateRecordStatus(segment)}></Team>}
                             {selectedSegment == "Service" && <Service btn="Update" formVal={...cardObj}></Service>}
                             {selectedSegment == "Review" && <Review btn="Update" formVal={...cardObj}></Review>}
                             {selectedSegment == "Project" && <Project btn="Update" formVal={...cardObj}></Project>}
@@ -54,7 +64,7 @@ const card = (props)=>{
 
             {showDeleteModal && <Modal onClose={() => setDeleteShowModal(false)} classes={{dimensionClass:'w-1/5 h-1/5'}}>
                                 {/* Delete modal */}
-                                {<DeleteRecord></DeleteRecord>}
+                                    {<DeleteRecord presentState={(segment)=>updateRecordStatus(segment)} stopDelete={closeDeleteRecord}></DeleteRecord>}
                                 </Modal>}
         </div>
     )

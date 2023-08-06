@@ -1,35 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const Modal = ({ onClose, children, title,classes }) => {
-    const handleCloseClick = (e) => {
-        debugger
-        e.preventDefault();
-        onClose();
-    };
+const Loading = ({classes}) => {
 
     const containerClass = classes.containerClass?classes.containerClass:'absolute top-0 left-0 w-full h-full flex justify-center items-center bg-slate-300/50'
     const dimensionClass = classes.dimensionClass?classes.dimensionClass:'w-2/3 h-2/3'
     const wrapperClass = classes.wrapperClass?classes.wrapperClass:'h-full w-full bg-white px-12 pt-16 rounded-2xl relative'
+    const layoutClass = classes.layoutClass?classes.layoutClass:'flex justify-end text-base' 
     const closeModalIconClass = classes.closeModaIconClass?classes.closeModaIconClass:'absolute top-5 right-10'
-    const msgClass = classes.msgClass?classes.msgClass:'leading-4'
-    const modalContent = (
+    const LoadingCContent = (
         <div className={containerClass}>
-            <div className={dimensionClass}>
-                <div className={wrapperClass}>
-                        <a href="#" className={closeModalIconClass} onClick={handleCloseClick}>
-                            x
-                        </a>
-                    <div className={msgClass}>{children}</div>
-                </div>
+            <div className="inline-block h-8 w-8 animate-[spinner-grow_0.75s_linear_infinite] rounded-full bg-current align-[-0.125em] opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
+            role="status">
+            <span
+                className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+                >Loading...</span>
             </div>
         </div>
     );
 
     return ReactDOM.createPortal(
-        modalContent,
+        LoadingCContent,
         document.getElementById("modal-root")
     );
 };
 
-export default Modal
+export default Loading

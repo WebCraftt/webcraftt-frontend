@@ -1,7 +1,7 @@
 'use client'
 import { useForm} from 'react-hook-form';
 
-const team =(props)=>{
+const project =(props)=>{
     const formVal = {...props.formVal}
     const {register,handleSubmit} = useForm();
     const onSubmit = data=>{
@@ -46,4 +46,4 @@ const team =(props)=>{
     )
 }
 
-export default team;
+export default project;
