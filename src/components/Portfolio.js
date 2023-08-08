@@ -11,7 +11,7 @@ import { SiNextdotjs } from "react-icons/si";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const Project = () => {
+const Portfolio = () => {
   const projects = [
     {
       title: "Tracking Application",
@@ -95,23 +95,27 @@ const Project = () => {
   };
 
   return (
-    <div className="w-full mx-auto rounded-t-xl relative" id="Portfolio">
+    <div
+      className="w-full mx-auto rounded-t-xl relative pt-[110px]"
+      id="Portfolio"
+    >
       <div
         data-aos="fade-down"
         data-aos-easing="linear"
         data-aos-duration="1500"
       >
         <h1
-          className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold 
+          className="max-w-2xl mb-14 text-4xl text-center m-auto font-extrabold 
       tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
         >
           Our <span className="text-[#9dd4e8]">Portfolio</span>
         </h1>
       </div>
-      <p className="text-center sm:w-96 m-auto">
-        Lorem ipsum dolor quidem vitae porro quis nobis enim voluptates suscipit
-        rerum nam?
-      </p>
+      {/* <p className="text-center sm:w-96 m-auto">
+        Discover innovation, expertise, and unparalleled solutions that drive
+        digital transformation and elevate businesses to new heights. Let's
+        shape a smarter future together.
+      </p> */}
       <br />
       <Carousel
         responsive={responsive}
@@ -159,4 +163,4 @@ const Project = () => {
   );
 };
 
-export default Project;
+export default Portfolio;

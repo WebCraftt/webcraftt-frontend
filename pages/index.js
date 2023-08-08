@@ -5,7 +5,7 @@ import Testimonials from "@/src/components/Testimonials";
 import Team from "@/src/components/Team";
 import ContactUs from "@/src/components/ContactUs";
 import Footer from "@/src/components/Footer";
-import Project from "@/src/components/Project";
+import Portfolio from "@/src/components/Portfolio";
 import Link from "next/link";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
       <About />
       <Package />
       <Team />
-      <Project />
+      <Portfolio />
       <Testimonials />
       <ContactUs />
       <Footer />

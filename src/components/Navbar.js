@@ -3,14 +3,15 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 const navigation = [
-  { name: "About", href: "#HeroPage", current: true },
-  { name: "Services", href: "#Packages", current: false },
-  { name: "Team", href: "#Team", current: false },
-  { name: "Portfolio", href: "#Portfolio", current: false },
-  { name: "Contact Us", href: "#Contact-Us", current: false },
-  { name: "Login", href: "#", current: false },
+  { name: "About", href: "#HeroPage" },
+  { name: "Services", href: "#Packages" },
+  { name: "Team", href: "#Team" },
+  { name: "Portfolio", href: "#Portfolio" },
+  { name: "Contact Us", href: "#Contact-Us" },
+  { name: "Login", href: "#" },
 ];
 
 function classNames(...classes) {
@@ -18,6 +19,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
+  const [active, setActive] = useState("");
+
   return (
     <Disclosure as="nav" className="bg-gray-800 sticky top-0 z-10">
       {({ open }) => (
@@ -51,8 +54,9 @@ export default function Navbar() {
                       <Link
                         key={item.name}
                         href={item.href}
+                        onClick={() => setActive(item.name)}
                         className={classNames(
-                          item.current
+                          active === item.name
                             ? "bg-gray-900 text-white"
                             : "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "rounded-md px-3 py-2 text-sm font-bold "
