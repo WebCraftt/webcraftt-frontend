@@ -8,12 +8,16 @@ import Team from './team';
 import Service from './service';
 import Review from './review';
 import Project from './project';
+import SnackBar from './snackBar';
 import Loader from './loading';
 
 const dataSegment = ({title})=>{
 
     const [selectedSegment,setSelectedSegment] = useState(title); 
+    const [updateView,setUpdateView] = useState(false); 
     const [showModal,setShowModal] = useState(false);
+    const [showSnack,setSnackView] = useState(false)
+    const [snackMsg,setSnackMsg] = useState('');
 
     useEffect(()=>{
         setSelectedSegment(title)
@@ -26,10 +30,21 @@ const dataSegment = ({title})=>{
         })
     }
 
-    const updateSegmentState=(segment)=>{
+    const setRefreshState=(state,segment)=>{
         debugger
         setShowModal(false);
         setSelectedSegment(segment)
+        if(state.isSuccess == true){
+            setUpdateView(true)
+            setSnackMsg(state.successMsg)
+            setSnackView(true)
+        }else if(state.isSuccess == false){
+            setUpdateView(false)
+            setSnackMsg(state.erroMsg)
+            setSnackView(false)
+        }else{
+            setUpdateView(false)
+        }
     }
 
     return(
@@ -38,21 +53,23 @@ const dataSegment = ({title})=>{
                 <span className='text-xl font-semibold text-violet-800'>{selectedSegment}</span>
                 <button className='w-1/6 h-8 bg-orange-400 rounded-md shadow-md hover:bg-orange-500 active:scale-95 active:shadow-sm' onClick={addService}>Add</button>    
             </div>
-         
-            <div className='grid gap-8 grid-rows-{n} px-8 py-8 overflow-y-auto scroll-smooth overflow-x-hidden grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))]'>
-                {selectedSegment == "Team" && <TeamData presentState={(segment)=>updateSegmentState(segment)}></TeamData>}
-                {selectedSegment == "Service" && <ServiceData></ServiceData>}
-                {selectedSegment == "Review" && <ReviewData></ReviewData>}
-                {selectedSegment == "Project" && <ProjectData></ProjectData>}
-                {selectedSegment == "Loading" && <Loader classes=''></Loader>}
-            </div>
+            {!showModal &&
+                        <div className='grid gap-8 grid-rows-{n} px-8 py-8 overflow-y-auto scroll-smooth overflow-x-hidden grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))]'>
+                        {/* {selectedSegment == "Team" && <TeamData presentState={(segment)=>updateSegmentState(segment)}></TeamData>} */}
+                        {selectedSegment == "Team" && <TeamData updateView = {updateView}></TeamData>}
+                        {selectedSegment == "Service" && <ServiceData></ServiceData>}
+                        {selectedSegment == "Review" && <ReviewData></ReviewData>}
+                        {selectedSegment == "Project" && <ProjectData></ProjectData>}
+                    </div>
+            }
             {showModal && <Modal onClose={() => setShowModal(false)} classes=''>
-                            {selectedSegment == "Team" && <Team btn="Add" presentState={(segment)=>updateSegmentState(segment)}></Team>}
+                            {selectedSegment == "Team" && <Team btn="Add" apiStatus={(state)=>{setRefreshState(state,'Team')}}></Team>}
                             {selectedSegment == "Service" && <Service btn="Add"></Service>}
                             {selectedSegment == "Review" && <Review btn="Add"></Review>}
                             {selectedSegment == "Project" && <Project btn="Add"></Project>}
                         </Modal>
             }
+            {showSnack && <SnackBar onClose={() => setSnackView(false)} msg={snackMsg} classes='' timeout='3000'></SnackBar>}
         </div>
     )
 }

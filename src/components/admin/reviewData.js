@@ -108,8 +108,8 @@ const reviewData =(props)=>{
         }
     ]
 
-    const recordUpdateStatus=(segment)=>{
-        props.presentState(segment)
+    const recordUpdateStatus=(segmentName)=>{
+        props.presentState(segmentName)
     }
 
 
@@ -117,11 +117,11 @@ const reviewData =(props)=>{
         <>
              {segmentData.map((segment=>{
                                 return(
-                                    <Card key={segment.id} id={segment.id} fields={...segment.fields} segment='Review' recordUpdated={(segment)=>{recordUpdateStatus(segment)}}></Card>
+                                    <Card key={segment.id} id={segment.id} fields={...segment.fields} segment='Review' recordUpdated={(segmentName)=>{recordUpdateStatus(segmentName)}}></Card>
                                 )
              }))}
              {isLoading && <Loader classes=''></Loader>}
-            {!isLoading && hasError && <SnackBar onClose={() => setHasError(false)} msg='Something went wrong' classes='' timeout='300000'></SnackBar>}
+            {!isLoading && hasError && <SnackBar onClose={() => setHasError(false)} msg='Something went wrong' classes='' timeout='3000'></SnackBar>}
         </>
     )
 
