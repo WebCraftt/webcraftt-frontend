@@ -124,7 +124,7 @@ const service =(props)=>{
     return(
         <div className='px-16'>
             <div className='text-xl font-bold'>
-                <span>Team</span>
+                <span>Service</span>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex justify-between w-full'>

@@ -6,125 +6,71 @@ import Card from './card';
 const reviewData =(props)=>{
 
     const [isLoading,setLoading] = useState(false)
-    const [hasError,setHasError] = useState(false)
+    const [refreshData,setRefreshData] = useState(false)
+    const [segmentData,setSegmentData]=useState([]);
+    const [showSnack,setSnackView] = useState(false)
+    const [snackMsg,setSnackMsg] = useState('');
+    const [refreshState,setRefreshState] = useState({
+        isSuccess:false,
+        hasError: false,
+        successMsg: '',
+        erroMsg:''
+    })
     const dataFetched = useRef(false);
+    
 
     const getData = async()=>{
         try{
             setLoading(true)
-            setHasError(false)
-    
-            const response = await fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
+            const response = await fetch('http://localhost:8000/api/v1/reviews/')
             if(!response.status){
-                setHasError(true)
                 throw new Error('Something went wrong')
             }
-            const jsonParse = await response.json();
-            console.log(jsonParse)
+            const responseJson = await response.json();
+            setSegmentData((prevState)=>{
+                return responseJson.data
+            });
+            if(refreshState.isSuccess == true){
+                setSnackMsg(refreshState.successMsg)
+                setSnackView(true)
+            }else if(refreshState.hasError == true){
+                setSnackMsg(refreshState.erroMsg)
+                setSnackView(true)
+            }
+
         }
         catch{
-            setHasError(true)
         }
         setLoading(false)
     }; 
 
     useEffect(()=>{
-        if(dataFetched.current)return;
+        debugger
+        if(dataFetched.current && refreshData == false && props.updateView == false)return;
         dataFetched.current = true;
+        setRefreshData(false)
         getData()
-    },[])
+    },[refreshData])
 
 
-    const segmentData = [
-        {
-            id: 1,
-            fields:{
-                name:'Service 1',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 2,
-            fields:{
-                name:'Service 2',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 3,
-            fields:{
-                name:'Service 3',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 4,
-            fields:{
-                name:'Service 4',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 5,
-            fields:{
-                name:'Service 5',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 6,
-            fields:{
-                name:'Service 1',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        },
-        {
-            id: 7,
-            fields:{
-                name:'Service 2',
-                image: '',
-                details: '',
-                discount: '',
-                price:''
-            }
-        }
-    ]
-
-    const recordUpdateStatus=(segmentName)=>{
-        props.presentState(segmentName)
+    const updateViewStatus=(state)=>{
+        setRefreshData(true)
+        setRefreshState(state)
     }
-
 
     return(
         <>
-             {segmentData.map((segment=>{
+             {segmentData.length>0 && segmentData.map((segment=>{
                                 return(
-                                    <Card key={segment.id} id={segment.id} fields={...segment.fields} segment='Review' recordUpdated={(segmentName)=>{recordUpdateStatus(segmentName)}}></Card>
+                                    <Card key={segment._id} id={segment._id} fields={...segment} segment='Review' refreshView={(state)=>{updateViewStatus(state)}}></Card>
                                 )
              }))}
              {isLoading && <Loader classes=''></Loader>}
-            {!isLoading && hasError && <SnackBar onClose={() => setHasError(false)} msg='Something went wrong' classes='' timeout='3000'></SnackBar>}
+             {showSnack && <SnackBar onClose={() => setSnackView(false)} msg={snackMsg} classes='' timeout='3000'></SnackBar>}
         </>
     )
 
 }
 
 export default reviewData;
+
