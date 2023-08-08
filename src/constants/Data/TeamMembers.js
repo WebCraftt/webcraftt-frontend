@@ -7,34 +7,33 @@ export const TeamMembersList = [
     name: "Sagar D.",
     role: "Team Lead & Lead Developer",
     email:
-      "Sapar is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, Node, Mongo & Express",
-  },
-  {
-    image: user,
-    name: "Ashim Ruda Paul",
-    role: "Backend Developer",
-    email:
-      "Ashim is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, HTML, CSS and Laravel Php.",
+      "Sapar is proficient in technologies like NextJs, ReactJs, React-Native, Typescript, Node, Mongo & Express",
   },
   {
     image: shuja,
     name: "Shuja Saqib",
-    role: "Frontend Developer",
+    role: "Full Stack Developer",
     email:
-      "Shuja is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, HTML, CSS and Laravel Php.",
+      "Shuja is proficient in technologies like NextJs, ReactJs, React-Native, Typescript, HTML, CSS and Laravel Php.",
+  },
+  {
+    image: user,
+    name: "Ashim Ruda Paul",
+    role: "Full Stack Developer",
+    email: "Ashim is proficient in technologies like React, Mongo and NodeJs.",
   },
   {
     image: user,
     name: "Dip",
     role: "Frontend Developer",
     email:
-      "Dip is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, HTML, CSS and Laravel Php.",
+      "Dip is  proficient in technologies like ReactJs, NextJs, HTML and CSS.",
   },
   {
     image: user,
     name: "John Snow",
     role: "Backend Developer",
     email:
-      "John is a Full Stack Developer proficient in technologies like React, React-Native, Typescript, HTML, CSS and Laravel Php.",
+      "John is proficient in technologies like NextJs, Flutter, Tailwind CSS and Laravel Php.",
   },
 ];
