@@ -25,7 +25,10 @@ const Team = () => {
     },
   };
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-fit py-6 mb-4 " id="Team">
+    <div
+      className="bg-white dark:bg-gray-900 min-h-fit pt-[110px] mb-4 "
+      id="Team"
+    >
       <div data-aos="zoom-in-up">
         <h1
           className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold 

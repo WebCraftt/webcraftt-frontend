@@ -144,7 +144,7 @@ const ContactUs = () => {
                     id="name"
                     placeholder="Full Name"
                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border 
-                  border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none"
+                  border-gray-400 dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
@@ -158,7 +158,7 @@ const ContactUs = () => {
                     id="email"
                     placeholder="Email"
                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border
-                   border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none"
+                   border-gray-400 dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
@@ -172,7 +172,7 @@ const ContactUs = () => {
                     id="tel"
                     placeholder="Telephone Number"
                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 
-                  dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none"
+                  dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col mt-2">
@@ -185,7 +185,7 @@ const ContactUs = () => {
                     id="text"
                     placeholder="Message"
                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border
-                   border-gray-400 dark:border-gray-700 text-white font-semibold focus:border-indigo-500 focus:outline-none"
+                   border-gray-400 dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 

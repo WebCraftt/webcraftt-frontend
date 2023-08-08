@@ -20,7 +20,7 @@ export const PackageList = [
     time: "7 Days",
   },
   {
-    title: "Professional Website",
+    title: "Professional Business Website",
     price: "$2600",
     desc: [
       "Take your business to new heights with our professional package",
