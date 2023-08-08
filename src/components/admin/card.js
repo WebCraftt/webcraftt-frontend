@@ -67,9 +67,9 @@ const card = (props)=>{
 
                             {/* Edit modal */}
                             {selectedSegment == "Team" && <Team btn="Update" id={props.id} apiStatus={(state)=>{setApiStatus(state)}}></Team>}
-                            {selectedSegment == "Service" && <Service btn="Update" formVal={...cardObj}></Service>}
-                            {selectedSegment == "Review" && <Review btn="Update" formVal={...cardObj}></Review>}
-                            {selectedSegment == "Project" && <Project btn="Update" formVal={...cardObj}></Project>}
+                            {selectedSegment == "Service" && <Service btn="Update" id={props.id} apiStatus={(state)=>{setApiStatus(state)}}></Service>}
+                            {selectedSegment == "Review" && <Review btn="Update" id={props.id} apiStatus={(state)=>{setApiStatus(state)}}></Review>}
+                            {selectedSegment == "Project" && <Project btn="Update" id={props.id} apiStatus={(state)=>{setApiStatus(state)}}></Project>}
                         </Modal>
             }
 

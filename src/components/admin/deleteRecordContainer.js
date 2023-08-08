@@ -15,7 +15,7 @@ const deleteRecordContainer =(props)=>{
     if(props.segment == "Team"){
         apiEndPoint = "teams"
     }else if(props.segment == "Service"){
-        apiEndPoint = "teams"
+        apiEndPoint = "services"
     }else if(props.segment == "Review"){
         apiEndPoint = "reviews"
     }else if(props.segment == "Project"){

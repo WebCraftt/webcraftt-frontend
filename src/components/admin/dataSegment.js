@@ -55,18 +55,17 @@ const dataSegment = ({title})=>{
             </div>
             {!showModal &&
                         <div className='grid gap-8 grid-rows-{n} px-8 py-8 overflow-y-auto scroll-smooth overflow-x-hidden grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))]'>
-                        {/* {selectedSegment == "Team" && <TeamData presentState={(segment)=>updateSegmentState(segment)}></TeamData>} */}
                         {selectedSegment == "Team" && <TeamData updateView = {updateView}></TeamData>}
-                        {selectedSegment == "Service" && <ServiceData></ServiceData>}
-                        {selectedSegment == "Review" && <ReviewData></ReviewData>}
-                        {selectedSegment == "Project" && <ProjectData></ProjectData>}
+                        {selectedSegment == "Service" && <ServiceData updateView = {updateView}></ServiceData>}
+                        {selectedSegment == "Review" && <ReviewData updateView = {updateView}></ReviewData>}
+                        {selectedSegment == "Project" && <ProjectData updateView = {updateView}></ProjectData>}
                     </div>
             }
             {showModal && <Modal onClose={() => setShowModal(false)} classes=''>
                             {selectedSegment == "Team" && <Team btn="Add" apiStatus={(state)=>{setRefreshState(state,'Team')}}></Team>}
-                            {selectedSegment == "Service" && <Service btn="Add"></Service>}
-                            {selectedSegment == "Review" && <Review btn="Add"></Review>}
-                            {selectedSegment == "Project" && <Project btn="Add"></Project>}
+                            {selectedSegment == "Service" && <Service btn="Add" apiStatus={(state)=>{setRefreshState(state,'Service')}}></Service>}
+                            {selectedSegment == "Review" && <Review btn="Add" apiStatus={(state)=>{setRefreshState(state,'Review')}}></Review>}
+                            {selectedSegment == "Project" && <Project btn="Add" apiStatus={(state)=>{setRefreshState(state,'Project')}}></Project>}
                         </Modal>
             }
             {showSnack && <SnackBar onClose={() => setSnackView(false)} msg={snackMsg} classes='' timeout='3000'></SnackBar>}
