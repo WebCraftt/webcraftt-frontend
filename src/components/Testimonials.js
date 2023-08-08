@@ -24,9 +24,9 @@ const Testimonial = () => {
         "https://cdn1.designhill.com/assets/dh/images/designhill_logo.svg?ver=2.12.52",
       reviewAlt: "lineicon",
       details:
-        "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
+        "One of the finest agency to work with. They have got really great team who possesses great technical skills. Would like to work with them again.",
       name: "Larry Diamond",
-      position: "Chief Executive Officer.",
+      position: "CEO",
       rating: 5,
     },
     {
@@ -34,10 +34,9 @@ const Testimonial = () => {
       reviewImg:
         "https://cdn.logojoy.com/wp-content/uploads/2018/05/01104652/799.png",
       reviewAlt: "lineicon",
-      details:
-        "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
-      name: "Larry Diamond",
-      position: "Chief Executive Officer.",
+      details: "Absolutely loved their work. Very talented people.",
+      name: "Jackson Wills",
+      position: "COO",
       rating: 5,
     },
     {
@@ -46,9 +45,9 @@ const Testimonial = () => {
         "https://cdn1.designhill.com/assets/dh/images/designhill_logo.svg?ver=2.12.52",
       reviewAlt: "lineicon",
       details:
-        "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
-      name: "Larry Diamond",
-      position: "Chief Executive Officer.",
+        "Work was delivered in time. Everything was executed in the planned manner. Loved the work. Great work guys!",
+      name: "Scott Streit",
+      position: "Independent Client",
       rating: 5,
     },
     {
@@ -57,9 +56,9 @@ const Testimonial = () => {
         "https://cdn1.designhill.com/assets/dh/images/designhill_logo.svg?ver=2.12.52",
       reviewAlt: "lineicon",
       details:
-        "Velit est sit voluptas eum sapiente omnis! Porro, impedit minus quam reprehenderit tempore sint quaerat id! Mollitia perspiciatis est asperiores commodi labore!",
-      name: "Larry Diamond",
-      position: "Chief Executive Officer.",
+        "They do everything they commit. Their team is very active and skilled. Would prefer them for future tasks.",
+      name: "Paul Roomi",
+      position: "CEO",
       rating: 5,
     },
     // Add more testimonials here...
@@ -85,7 +84,7 @@ const Testimonial = () => {
     },
     infinite: true,
     autoPlay: true,
-    autoPlaySpeed: 1000, // 1 second
+    autoPlaySpeed: 3000, // 1 second
   };
 
   return (
@@ -104,6 +103,7 @@ const Testimonial = () => {
                 <div className="w-full items-center md:flex">
                   <div className="relative mb-12 w-[90%] max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
                     <Image
+                      className="rounded-lg"
                       src={testimonial.image}
                       alt="image"
                       // layout="responsive"
