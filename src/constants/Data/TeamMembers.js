@@ -1,6 +1,7 @@
 import shuja from "../Images/Team Members/Shuja Saqib.JPEG";
-import user from "../Images/Team Members/User.jpeg";
 import sagar from "../Images/Team Members/Sagar.png";
+import dip from "../Images/Team Members/Dip.jpg";
+import user from "../Images/Team Members/User.jpeg";
 export const TeamMembersList = [
   {
     image: sagar,
@@ -23,17 +24,10 @@ export const TeamMembersList = [
     email: "Ashim is proficient in technologies like React, Mongo and NodeJs.",
   },
   {
-    image: user,
+    image: dip,
     name: "Dip",
     role: "Frontend Developer",
     email:
-      "Dip is  proficient in technologies like ReactJs, NextJs, HTML and CSS.",
-  },
-  {
-    image: user,
-    name: "John Snow",
-    role: "Backend Developer",
-    email:
-      "John is proficient in technologies like NextJs, Flutter, Tailwind CSS and Laravel Php.",
+      "Dip is proficient in technologies like Javascript, Angular, ReactJs, NextJs, jQuery, NodeJs and Ionic.",
   },
 ];
