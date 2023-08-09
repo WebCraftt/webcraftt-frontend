@@ -23,7 +23,7 @@ const index = () => {
         <div className='col-span-1...'>
           <LeftNavBar changeSegment={segmentChangeHandler}></LeftNavBar>
         </div>
-        <div className='col-span-5 px-12 py-12 bg-white'>
+        <div className='col-span-5 px-12 py-12 bg-slate-100'>
           {selectedSegment && <DataSegment title={selectedSegment}></DataSegment>}
         </div>
       </div>
