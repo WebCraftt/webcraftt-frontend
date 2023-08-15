@@ -18,6 +18,8 @@ const service =(props)=>{
         }
     });
 
+    const[serviceImg,setServiceImg] = useState('')
+
     const [isLoading,setLoading] = useState(false)
     let apiState = {
         isSuccess:false,
@@ -40,6 +42,9 @@ const service =(props)=>{
             }
             const responseJson = await response.json();
 
+            const base64Img = responseJson.data.image?responseJson.data.image:''
+            setServiceImg(base64Img);
+
             reset(responseJson.data);
         }
         catch{
@@ -58,16 +63,30 @@ const service =(props)=>{
     },[])
 
 
+    const saveImage = (e)=>{
+        let reader = new FileReader() 
+        reader.readAsDataURL(e.target.files[0])
+        
+        
+        reader.onload = () => {      
+            // setValue('image',reader.result)
+            setServiceImg(reader.result)
+        }
+
+    }
+
     const onSubmit = async(data)=>{
 
         let payload = {
 
             "name": data.name,
-            "image": "img.png",
+            "image": serviceImg,
             "details": data.details,
-            "discount": data.discount,
-            "price": data.price        
+            "discount": data.discount.toString(),
+            "price": data.price.toString()        
         }
+
+        debugger
 
         let url = ''
         const requestOptions = {
@@ -126,7 +145,7 @@ const service =(props)=>{
             <div className='text-xl font-bold'>
                 <span>Service</span>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} className="relative">
                 <div className='flex justify-between w-full'>
                     <div className='flex flex-col w-5/12 my-8'>
                         <label>Name</label>
@@ -140,20 +159,23 @@ const service =(props)=>{
                 <div className='flex justify-between w-full'>
                     <div className='flex flex-col w-5/12 my-8'>
                         <label>Discount</label>
-                        <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("discount",{required:true})}></input>
+                        <input type="number" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("discount",{required:true})}></input>
                     </div>
                     <div className='flex flex-col w-5/12 my-8'>
                         <label>Price</label>
-                        <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("price",{required:true})}></input>
+                        <input type="number" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("price",{required:true})}></input>
                     </div>
                 </div>
                 <div className='flex justify-start w-full'>
                     <div className='flex flex-col my-8 w-4/12'>
                         <label>Image</label>
-                        <input type="file" className='rounded-t-lg rounded-b-lg h-10' {...register("image")}></input>
+                        <input type="file" accept='.png, .jpg' className='rounded-t-lg rounded-b-lg h-10' {...register("image")} onChange={saveImage}></input>
+                    </div>
+                    <div className='flex flex-col my-8 w-4/12'>
+                        <img className='w-1/2' src={serviceImg}></img>
                     </div>
                 </div>
-                <button className='w-1/6 h-8 bg-green-400 rounded-md float-right shadow-md hover:bg-green-500 active:scale-95 active:shadow-sm' type='submit'>{props.btn}</button>
+                <button className='absolute bottom-[5%] right-0 w-1/6 h-8 bg-green-400 rounded-md float-right shadow-md hover:bg-green-500 active:scale-95 active:shadow-sm' type='submit'>{props.btn}</button>
             </form>
 
             {isLoading && <Loader classes=''></Loader>}

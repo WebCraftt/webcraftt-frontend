@@ -23,6 +23,7 @@ const team =(props)=>{
         successMsg: '',
         erroMsg:'',
     }
+    const[teamImg,setTeamImg] = useState('')
     const [showSnack,setSnackView] = useState(false)
     const [snackMsg,setSnackMsg] = useState('');
     const dataFetched = useRef(false);
@@ -37,6 +38,9 @@ const team =(props)=>{
                 throw new Error('Something went wrong')
             }
             const responseJson = await response.json();
+
+            const base64Img = responseJson.data.profileImage?responseJson.data.profileImage:''
+            setTeamImg(base64Img);
 
             reset(responseJson.data);
         }
@@ -55,13 +59,25 @@ const team =(props)=>{
         }
     },[])
 
+    const saveImage = (e)=>{
+        let reader = new FileReader() 
+        reader.readAsDataURL(e.target.files[0])
+        
+        
+        reader.onload = () => {      
+            // setValue('image',reader.result)
+            setTeamImg(reader.result)
+        }
+
+    }
+
 
     const onSubmit = async(data)=>{
 
         let payload = {
             "name":data.name,
             "position":data.position,
-            "profileImage":data.profileImage,
+            "profileImage":teamImg,
             "linkedinProfile":data.linkedinProfile,
             "githubProfile":data.githubProfile,
             "twitterProfile":data.twitterProfile
@@ -124,38 +140,41 @@ const team =(props)=>{
             <div className='text-xl font-bold'>
                 <span>Team</span>
             </div>
-             <form onSubmit={handleSubmit(onSubmit)}>
+             <form onSubmit={handleSubmit(onSubmit)} className="relative">
                 <div className='flex justify-between w-full'>
-                    <div className='flex flex-col w-5/12 my-8'>
+                    <div className='flex flex-col w-5/12 mt-6'>
                         <label>Name</label>
                         <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("name",{required:true})}></input>
                     </div>
-                    <div className='flex flex-col w-5/12 my-8'>
+                    <div className='flex flex-col w-5/12 mt-6'>
                         <label>Position</label>
                         <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("position",{required:true})}></input>
                     </div>
                 </div>
                 <div className='flex justify-between w-full'>
-                    <div className='flex flex-col w-5/12 my-8'>
-                        <label>Profile</label>
-                        <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("profileImage")}></input>
-                    </div>
-                    <div className='flex flex-col w-5/12 my-8'>
+                    <div className='flex flex-col w-5/12 my-6'>
                         <label>LinkedIn Profile</label>
                         <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("linkedinProfile")}></input>
                     </div>
-                </div>
-                <div className='flex justify-between w-full'>
-                    <div className='flex flex-col w-5/12 my-8'>
+                    <div className='flex flex-col w-5/12 my-6'>
                         <label>GitHub Profile</label>
                         <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("githubProfile")}></input>
                     </div>
-                    <div className='flex flex-col w-5/12 my-8'>
+                </div>
+                <div className='flex justify-between w-full'>
+                    <div className='flex flex-col w-5/12 mb-6'>
                         <label>Twitter Profile</label>
                         <input type="text" className='rounded-t-lg rounded-b-lg h-10 px-4 border-slate-400 border-2' {...register("twitterProfile")}></input>
                     </div>
+                    <div className='flex flex-col w-4/12 mb-6'>
+                        <img className='w-1/2' src={teamImg}></img>
+                    </div>
                 </div>
-                <button className='w-1/6 h-8 bg-green-400 rounded-md float-right mt-6 shadow-md hover:bg-green-500 active:scale-95 active:shadow-sm' type='submit'>{props.btn}</button>
+                <div className='flex flex-col w-5/12'>
+                        <label>Image</label>
+                        <input type="file" accept='.png, .jpg' className='rounded-t-lg rounded-b-lg h-10' {...register("profileImage")} onChange={saveImage}></input>
+                </div>
+                <button className='absolute bottom-[5%] right-0 w-1/6 h-8 bg-green-400 rounded-md float-right mt-6 shadow-md hover:bg-green-500 active:scale-95 active:shadow-sm' type='submit'>{props.btn}</button>
             </form>
             {isLoading && <Loader classes=''></Loader>}
             {!isLoading && showSnack && <SnackBar onClose={() => setSnackView(false)} msg={snackMsg} classes='' timeout='3000'></SnackBar>}
