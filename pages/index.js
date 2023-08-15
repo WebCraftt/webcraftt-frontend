@@ -7,11 +7,12 @@ import ContactUs from "@/src/components/ContactUs";
 import Footer from "@/src/components/Footer";
 import Portfolio from "@/src/components/Portfolio";
 import Link from "next/link";
+import FacebookMsg from "@/src/components/FacebookMsg";
 
 export default function Home() {
   return (
     <Layout>
-      <Link
+      {/* <Link
         href="https://wa.me/995592005978?text=I'm%20interested%20in%20your%20services%20and%20would%20like%20to%20know%20more."
         target="_blank"
       >
@@ -30,7 +31,7 @@ export default function Home() {
           <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
           <path d="M9 10a0.5 .5 0 0 0 1 0v-1a0.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a0.5 .5 0 0 0 0 -1h-1a0.5 .5 0 0 0 0 1" />
         </svg>
-      </Link>
+      </Link> */}
       <About />
       <Package />
       <Team />
@@ -38,6 +39,7 @@ export default function Home() {
       <Testimonials />
       <ContactUs />
       <Footer />
+      <FacebookMsg />
     </Layout>
   );
 }
