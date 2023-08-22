@@ -1,8 +1,20 @@
-import shuja from "../Images/Team Members/Shuja Saqib.JPEG";
+import nik from "../Images/Team Members/Nik.png";
 import sagar from "../Images/Team Members/Sagar.png";
-import dip from "../Images/Team Members/Dip.jpg";
-import user from "../Images/Team Members/User.jpeg";
+import shuja from "../Images/Team Members/Shuja Saqib.png";
+import ashim from "../Images/Team Members/Ashim.png";
+import dip from "../Images/Team Members/Dip.png";
+import user from "../Images/Team Members/User.png";
 export const TeamMembersList = [
+  {
+    image: user,
+    name: "Aleksandre Gorgisheli",
+    role: "CEO",
+  },
+  {
+    image: nik,
+    name: "Nikoloz Khachidze",
+    role: "CEO",
+  },
   {
     image: sagar,
     name: "Sagar D.",
@@ -18,7 +30,7 @@ export const TeamMembersList = [
       "Shuja is proficient in technologies like NextJs, ReactJs, React-Native, Typescript, HTML, CSS and Laravel Php.",
   },
   {
-    image: user,
+    image: ashim,
     name: "Ashim Ruda Paul",
     role: "Full Stack Developer",
     email: "Ashim is proficient in technologies like React, Mongo and NodeJs.",
