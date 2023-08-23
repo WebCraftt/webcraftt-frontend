@@ -8,6 +8,7 @@ import Footer from "@/src/components/Footer";
 import Portfolio from "@/src/components/Portfolio";
 import Link from "next/link";
 import FacebookMsg from "@/src/components/FacebookMsg";
+import SignIn from "@/pages/SignIn";
 
 export default function Home() {
   return (
