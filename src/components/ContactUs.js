@@ -3,10 +3,10 @@ import React from "react";
 const ContactUs = () => {
   return (
     <div className="h-[80vh]" id="Contact-Us">
-      <div className="relative flex flex-col items-top justify-center h-max bg-white dark:bg-gray-900 sm:items-center sm:pt-0 py-10">
+      <div className="relative flex flex-col items-top justify-center h-max bg-gray-900 sm:items-center sm:pt-0 py-10">
         <h1
           className="max-w-2xl mb-14 text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl 
-      xl:text-6xl dark:text-white"
+      xl:text-6xl text-white"
         >
           Contact <span className="text-[#9dd4e8]">Us</span>
         </h1>
@@ -16,14 +16,14 @@ const ContactUs = () => {
         >
           <div className="mt-8 overflow-hidden">
             <div className="grid grid-cols-1 md:grid-cols-2">
-              <div className="h-fit p-6 mr-2 bg-gray-100 dark:bg-gray-800 sm:rounded-lg ">
-                <h1 className="text-4xl sm:text-5xl text-gray-800 dark:text-white font-extrabold tracking-tight">
+              <div className="h-fit p-6 mr-2  bg-gray-800 sm:rounded-lg ">
+                <h1 className="text-4xl sm:text-5xl  text-white font-extrabold tracking-tight">
                   Get in touch
                 </h1>
-                <p className="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
+                <p className="text-normal text-lg sm:text-2xl font-medium  text-gray-400 mt-2">
                   Fill in the form to start a conversation
                 </p>
-                <div className="flex items-center mt-8 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center mt-8  text-gray-400">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -50,7 +50,7 @@ const ContactUs = () => {
                     Acme Inc, Street, State, Postal Code
                   </div>
                 </div>
-                <div className="flex items-center mt-4 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center mt-4  text-gray-400">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -71,7 +71,7 @@ const ContactUs = () => {
                     +44 1234567890
                   </div>
                 </div>
-                <div className="flex items-center mt-2 text-gray-600 dark:text-gray-400">
+                <div className="flex items-center mt-2 text-gray-600 text-gray-400">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -143,8 +143,8 @@ const ContactUs = () => {
                     name="name"
                     id="name"
                     placeholder="Full Name"
-                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border 
-                  border-gray-400 dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
+                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white bg-gray-800 border 
+                  border-gray-400 border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
@@ -157,8 +157,8 @@ const ContactUs = () => {
                     name="email"
                     id="email"
                     placeholder="Email"
-                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border
-                   border-gray-400 dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
+                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white bg-gray-800 border
+                   border-gray-400 border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
@@ -171,8 +171,8 @@ const ContactUs = () => {
                     name="tel"
                     id="tel"
                     placeholder="Telephone Number"
-                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-400 
-                  dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
+                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white bg-gray-800 border border-gray-400 
+                  border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
                 <div className="flex flex-col mt-2">
@@ -184,8 +184,8 @@ const ContactUs = () => {
                     name="text"
                     id="text"
                     placeholder="Message"
-                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-white dark:bg-gray-800 border
-                   border-gray-400 dark:border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
+                    className="w-100 mt-2 py-3 px-3 rounded-lg bg-gray-800 border
+                    border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
 
