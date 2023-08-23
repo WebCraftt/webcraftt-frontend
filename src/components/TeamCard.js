@@ -2,32 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 const TeamCard = (props) => {
-  const TwitterIcon = ({ props }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={48} height={48} {...props}>
-      <linearGradient
-        id="a"
-        x1={10.341}
-        x2={40.798}
-        y1={8.312}
-        y2={38.769}
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop offset={0} stopColor="#2aa4f4" />
-        <stop offset={1} stopColor="#007ad9" />
-      </linearGradient>
-      <path fill="url(#a)" d="M46.105 ..." />
-    </svg>
-  );
   return (
-    // <div
-    //   className="group flex flex-col h-fit w-[65%] md:w-[70%]
-    //   border border-[#9dd4e8] rounded-[15px]
-    //   my-4 py-4
-    //   m-auto
-    //   items-center justify-start
-    //   text-white lg:transition-[3s]
-    //  lg:hover:scale-[110%] lg:hover:shadow-md lg:hover:shadow-[#7744d9] lg:hover:border-[#7744d9]"
-    // >
     <div
       className="group flex flex-col h-[460px] max-w-[350px]
       border border-[#9dd4e8] rounded-[15px] 
@@ -36,8 +11,8 @@ const TeamCard = (props) => {
       items-center justify-start
       text-white lg:transition-[3s] 
      lg:hover:scale-[110%] lg:hover:shadow-md lg:hover:shadow-[#7744d9] lg:hover:border-[#7744d9]"
+      style={props?.style}
     >
-      {/* <div className="flex justify-start items-start overflow-hidden lg:h-[23vh] lg:w-[70%] h-[18vh] w-[60%] rounded-[100%]"> */}
       <div className="overflow-hidden h-[200px] w-[200px] rounded-[100px]">
         <Image src={props.image} alt={props.name} />
       </div>
@@ -45,7 +20,7 @@ const TeamCard = (props) => {
       <div className="text-gray-500">{props.role}</div>
       <div className="">{props.email}</div>
       <div className="flex p-2 justify-center items-center">
-        {/* Linked In */}
+        {/* LinkedIn */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h6 w-6 m-2 text-[#0A66C2] lg:transition-[3s]  lg:hover:scale-[130%]"

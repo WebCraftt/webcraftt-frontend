@@ -34,13 +34,50 @@ const Team = () => {
           Our <span className="text-[#9dd4e8]">Team</span>
         </h1>
       </div>
-
+      {/* --------------------------------------Chief Executive Officers --------------------------------------- */}
       <div data-aos="zoom-in" data-aos-duration="2000">
+        {/* For Every Display expect Mobile View */}
+        <div className="hidden sm:flex w-full justify-center items-center py-16">
+          <div className="flex w-[730px] justify-between items-center">
+            {TeamMembersList.slice(0, 2).map((member, key) => {
+              return (
+                <TeamCard
+                  style={{ margin: 0, width: "340px" }}
+                  key={key}
+                  image={member.image}
+                  name={member.name}
+                  role={member.role}
+                  email={member.email}
+                />
+              );
+            })}
+          </div>
+        </div>
+        {/* For Mobile View Only */}
+        <div className="sm:hidden">
+          <Carousel
+            {...carouselOptions}
+            className="max-w-screen-xl py-8 mx-auto text-center md:py-16"
+          >
+            {TeamMembersList.slice(0, 2).map((member, key) => {
+              return (
+                <TeamCard
+                  key={key}
+                  image={member.image}
+                  name={member.name}
+                  role={member.role}
+                  email={member.email}
+                />
+              );
+            })}
+          </Carousel>
+        </div>
+        {/*--------------------------------TEAM MEMBERS---------------------------------------------------- */}
         <Carousel
           {...carouselOptions}
           className="max-w-screen-xl py-8 mx-auto text-center md:py-16"
         >
-          {TeamMembersList.map((member, key) => {
+          {TeamMembersList.slice(2).map((member, key) => {
             return (
               <TeamCard
                 key={key}
