@@ -25,14 +25,11 @@ const Team = () => {
     },
   };
   return (
-    <div
-      className="bg-white dark:bg-gray-900 min-h-fit pt-[110px] mb-4 "
-      id="Team"
-    >
+    <div className="bg-gray-900 min-h-fit pt-[110px] mb-4 " id="Team">
       <div data-aos="zoom-in-up">
         <h1
           className="max-w-2xl mb-4 text-4xl text-center m-auto font-extrabold 
-      tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
+      tracking-tight leading-none md:text-4xl xl:text-5xl text-white"
         >
           Our <span className="text-[#9dd4e8]">Team</span>
         </h1>

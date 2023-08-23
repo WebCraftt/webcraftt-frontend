@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-400">
+    <footer className="bg-gray-900 border-t border-gray-400">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -16,7 +16,7 @@ const Footer = () => {
                 alt="WebCraft"
                 className="h-20 w-auto"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-[#9dd4e8]">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-[#9dd4e8]">
                 WebCraft
               </span>
             </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-bold text-[#9dd4e8] uppercase">
                 Our Services
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link href="#Packages" className="hover:underline">
                     Web Apps
@@ -43,7 +43,7 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-bold text-[#9dd4e8] uppercase">
                 Our Products
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link href="#HeroPage" className="hover:underline ">
                     Dashboard
@@ -60,7 +60,7 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-bold text-[#9dd4e8] uppercase">
                 Legal
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link href="#" className="hover:underline">
                     Privacy Policy
@@ -75,9 +75,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className="text-sm sm:text-center text-gray-400">
             © 2023{" "}
             <Link href="#" className="hover:underline">
               WebCraft™
@@ -85,10 +85,7 @@ const Footer = () => {
             . All Rights Reserved.
           </span>
           <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
-            <Link
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
+            <Link href="#" className="text-gray-500 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -104,10 +101,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Facebook page</span>
             </Link>
-            <Link
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
+            <Link href="#" className="text-gray-500 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -119,10 +113,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Discord community</span>
             </Link>
-            <Link
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
+            <Link href="#" className="text-gray-500 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -138,10 +129,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">Twitter page</span>
             </Link>
-            <Link
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
+            <Link href="#" className="text-gray-500 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"
@@ -157,10 +145,7 @@ const Footer = () => {
               </svg>
               <span className="sr-only">GitHub account</span>
             </Link>
-            <Link
-              href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
-            >
+            <Link href="#" className="text-gray-500 hover:text-white">
               <svg
                 className="w-4 h-4"
                 aria-hidden="true"

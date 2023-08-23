@@ -88,9 +88,9 @@ const Testimonial = () => {
   };
 
   return (
-    <div className="pt-20 pb-20 lg:pt-[120px] lg:pb-[120px] bg-white dark:bg-gray-900">
+    <div className="pt-20 pb-20 lg:pt-[120px] lg:pb-[120px] bg-gray-900">
       <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
-        <h1 className="max-w-xl mb-5 mx-auto text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+        <h1 className="max-w-xl mb-5 mx-auto text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
           What Client Say About <span className="text-[#9dd4e8]">WebCraft</span>
         </h1>
       </div>
