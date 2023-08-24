@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import PackageItem from "./PackageItem";
 import { PackageList } from "../constants/Data/PackageList";
+import { getAllServices } from "../apis/api";
 
 const Package = () => {
+  const [packagelist, setPackageList] = useState([]);
+  console.log(packagelist);
+  useEffect(() => {
+    getAllServices()
+      .then(data => {
+        setPackageList(data);
+      })
+      .catch(error => {
+        console.error('Error fetching services:', error);
+      });
+  }, []);
+
   return (
     <div
       id="Packages"

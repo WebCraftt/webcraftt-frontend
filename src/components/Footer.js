@@ -16,7 +16,7 @@ const Footer = () => {
                 alt="WebCraft"
                 className="h-20 w-auto"
               />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-[#9dd4e8]">
+              <span className="self-center text-2xl font-semibold whitespace-nowrap text-[#9dd4e8]">
                 WebCraft
               </span>
             </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-bold text-[#9dd4e8] uppercase">
                 Our Services
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className=" text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link href="#Packages" className="hover:underline">
                     Web Apps
@@ -43,7 +43,7 @@ const Footer = () => {
               <h2 className="mb-6 text-sm font-bold text-[#9dd4e8] uppercase">
                 Our Products
               </h2>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className=" text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link href="#HeroPage" className="hover:underline ">
                     Dashboard
