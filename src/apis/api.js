@@ -1,15 +1,11 @@
-import axios from "axios";
-const BASE_URL = 'https://web-craft-server.vercel.app/api/v1/'
+const BASE_URL = 'https://webcraft-server.vercel.app/api/v1'
 
-export const getAllServices = () => {
-    return new Promise(async (resolve, reject) => {
-        try {
-            const response = await axios.get(`${BASE_URL}/services`);
-            resolve(response.data);
-        } catch (error) {
-            reject(error);
-        }
-    });
-};
-
-
+export const getAllServices = async () => {
+    try {
+        const response = await fetch(`${BASE_URL}/services`);
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        throw new Error(error);
+    }
+}
