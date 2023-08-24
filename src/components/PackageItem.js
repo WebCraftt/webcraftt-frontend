@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const PackageItem = (props) => {
@@ -44,14 +45,14 @@ const PackageItem = (props) => {
           Delivery Time: <span>{props.time}</span>
         </b>
       </div>
-      <a
-        href="#"
+      <Link
+        href={`/services/${props.id}`}
         className="inline-flex items-center justify-center px-5 py-3
          text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg
           lg:group-hover:text-white lg:group-hover:border-gray-600 lg:hover:bg-[#7744d9]"
       >
         Purchase Now
-      </a>
+      </Link>
     </div>
   );
 };
