@@ -5,7 +5,6 @@ import { getAllServices } from "../apis/api";
 
 const Package = () => {
   const [packagelist, setPackageList] = useState([]);
-  
   useEffect(() => {
     getAllServices()
       .then(data => {
@@ -34,14 +33,15 @@ const Package = () => {
         data-aos-duration="2000"
         className="grid w-full p-2 lg:grid-cols-4 sm:grid-cols-2 place-items-center"
       >
-        {PackageList.map((item, index) => {
+        {packagelist.map((item, index) => {
           return (
             <PackageItem
               key={index}
-              title={item.title}
+              title={item.name}
               price={item.price}
-              description={item.desc}
+              details={item.details}
               time={item.time}
+              id={item._id}
             />
           );
         })}

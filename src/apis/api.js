@@ -9,3 +9,14 @@ export const getAllServices = async () => {
         throw new Error(error);
     }
 }
+
+export const getSingleService = async (id) => {
+    try {
+        const response = await fetch(`${BASE_URL}/services/${id}`);
+        const data = await response.json();
+        return data.data;
+    } catch (error) {
+        console.log(error);
+        throw error; // Re-throw the error to propagate it
+    }
+}
