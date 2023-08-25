@@ -143,8 +143,10 @@ const ContactUs = () => {
                     name="name"
                     id="name"
                     placeholder="Full Name"
+
                     className="w-100 mt-2 py-3 px-3 rounded-lg  bg-gray-800 border 
                    border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
+
                   />
                 </div>
 
@@ -158,6 +160,7 @@ const ContactUs = () => {
                     id="email"
                     placeholder="Email"
                     className="w-100 mt-2 py-3 px-3 rounded-lg bg-gray-800 border
+
                     border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />
                 </div>
@@ -171,6 +174,7 @@ const ContactUs = () => {
                     name="tel"
                     id="tel"
                     placeholder="Telephone Number"
+
                     className="w-100 mt-2 py-3 px-3 rounded-lg  bg-gray-800 border 
                   border-gray-700 text-[#9dd4e8] font-semibold focus:border-indigo-500 focus:outline-none"
                   />

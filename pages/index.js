@@ -6,7 +6,6 @@ import Team from "@/src/components/Team";
 import ContactUs from "@/src/components/ContactUs";
 import Footer from "@/src/components/Footer";
 import Portfolio from "@/src/components/Portfolio";
-import Link from "next/link";
 import FacebookMsg from "@/src/components/FacebookMsg";
 
 export default function Home() {

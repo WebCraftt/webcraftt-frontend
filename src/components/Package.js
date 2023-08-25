@@ -23,7 +23,8 @@ const Package = () => {
       className="flex flex-col min-h-[100vh] px-4 justify-center items-center "
     >
       <div data-aos="fade-right">
-        <h1 className="max-w-2xl mb-10 text-4xl font-extrabold leading-none tracking-tight text-center md:text-5xl xl:text-6xl dark:text-white">
+        <h1 className="max-w-2xl mb-10 text-4xl text-center font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl ">
+
           Our <span className="text-[#9dd4e8]">Packages</span>
         </h1>
       </div>

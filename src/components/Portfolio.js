@@ -106,7 +106,7 @@ const Portfolio = () => {
       >
         <h1
           className="max-w-2xl mb-14 text-4xl text-center m-auto font-extrabold 
-      tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white"
+      tracking-tight leading-none md:text-4xl xl:text-5xl text-white"
         >
           Our <span className="text-[#9dd4e8]">Portfolio</span>
         </h1>
@@ -125,7 +125,7 @@ const Portfolio = () => {
       >
         {projects?.map((project, index) => (
           <div key={index} className="carousel-item mx-auto flex w-[60%]">
-            <div className="rounded-lg overflow-hidden w-[450px] m-auto bg-white dark:bg-gray-800">
+            <div className="rounded-lg overflow-hidden w-[450px] m-auto bg-gray-800">
               <img
                 src={project.imageUrlDark}
                 className="hidden dark:block h-[678px] w-[450px] rounded-lg object-cover"

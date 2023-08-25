@@ -60,9 +60,9 @@ const Testimonials = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 h-[90vh] flex items-center justify-center w-full">
+    <div className="bg-gray-900 h-[90vh] flex items-center justify-center w-full">
       <div className="pt-36">
-        <h1 className="max-w-xl mx-auto text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">
+        <h1 className="max-w-xl mx-auto text-4xl text-center m-auto font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
           What Client Say About <span className="text-[#9dd4e8]">WebCraft</span>
         </h1>
         <div className="max-w-xl m-auto px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
@@ -73,7 +73,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <div key={index} className="w-full mx-auto px-2 md:px-0">
                 <svg
-                  className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600"
+                  className="h-12 mx-auto mb-3 text-gray-600"
                   viewBox="0 0 24 27"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const Testimonials = () => {
                   />
                 </svg>
                 <blockquote>
-                  <p className="text-xl font-medium text-gray-900 dark:text-white">
+                  <p className="text-xl font-medium text-white">
                     {testimonial.quote}
                   </p>
                 </blockquote>
@@ -97,11 +97,11 @@ const Testimonials = () => {
                       objectFit="cover"
                     />
                   </div>
-                  <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                    <div className="pr-3 font-medium text-gray-900 dark:text-white">
+                  <div className="flex items-center divide-x-2 divide-gray-700">
+                    <div className="pr-3 font-medium text-white">
                       {testimonial.author}
                     </div>
-                    <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">
+                    <div className="pl-3 text-sm font-light text-gray-400">
                       {testimonial.position}
                     </div>
                   </div>

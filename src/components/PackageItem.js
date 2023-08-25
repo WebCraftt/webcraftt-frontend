@@ -23,7 +23,7 @@ const PackageItem = (props) => {
           return (
             <li key={key} className="flex items-start">
               <svg
-                className="flex-shrink-0 w-3.5 h-3.5 text-green-500 dark:text-green-400 mr-3 mt-1"
+                className="flex-shrink-0 w-3.5 h-3.5 text-green-400 mr-3 mt-1"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
