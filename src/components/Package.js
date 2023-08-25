@@ -15,8 +15,6 @@ const Package = () => {
       });
   }, []);
 
-  console.log(packagelist, "packagelist form packeg ")
-
   return (
     <div
       id="Packages"

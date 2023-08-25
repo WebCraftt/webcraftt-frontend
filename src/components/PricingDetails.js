@@ -8,9 +8,11 @@ import BuyDetails from './BuyDetails';
 const PricingDetails = () => {
     const router = useRouter()
     const { id } = router.query;
+
     const [service, setService] = useState({});
     const images = service?.image;
     const [loading, setLoading] = useState(false);
+    const [webdetails, setWebDetails] = useState(false);
     const BASE_URL = 'https://webcraft-server.vercel.app/api/v1'
 
 
@@ -29,7 +31,6 @@ const PricingDetails = () => {
             }
         }
         fetchData();
-
     }, [id]);
 
 
@@ -40,8 +41,14 @@ const PricingDetails = () => {
             {
                 loading ? <><Loading /></> :
                     <div className="bg-gray-800 text-white">
-                        <div className="pt-6">
-                            <BuyDetails />
+                        <div className="pt-6 relative">
+                            {
+                                webdetails &&
+                                <div className='absolute z-50 bg-slate-800 p-6 left-0 right-0'>
+                                    <BuyDetails setWebDetails={setWebDetails} />
+                                </div>
+
+                            }
 
                             {/* Image gallery */}
                             <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
@@ -102,7 +109,7 @@ const PricingDetails = () => {
                                             <a href="#" className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
                                         </div>
                                     </div>
-                                    <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Get The Service</button>
+                                    <button className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" onClick={() => setWebDetails(true)}>Get The Service</button>
                                 </div>
                                 <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
                                     <div>
