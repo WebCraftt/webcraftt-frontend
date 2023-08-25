@@ -2,7 +2,8 @@ import Link from "next/link";
 import React from "react";
 
 const PackageItem = (props) => {
-  const description = props.description;
+  const description = props.details;
+  console.log(props);
   return (
     <div
       className="group flex flex-col bg-[#FFFFFF] py-3 px-2 rounded-[15px] 
