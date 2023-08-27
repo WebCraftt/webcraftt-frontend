@@ -33,7 +33,7 @@ export const TeamMembersList = [
     image: ashim,
     name: "Ashim Ruda Paul",
     role: "Full Stack Developer",
-    email: "Ashim is proficient in technologies like React, Mongo and NodeJs.",
+    email: "Ashim is proficient in technologies like NextJs, ReactJs, React-Native, Typescript, Node, Mongo & Express , NustJs, VueJS",
   },
   {
     image: dip,
