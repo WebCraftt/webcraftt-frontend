@@ -1,7 +1,9 @@
+import Link from "next/link";
 import React from "react";
 
 const PackageItem = (props) => {
-  const description = props.description;
+  const description = props.details;
+  console.log(props);
   return (
     <div
       className="group flex flex-col bg-[#FFFFFF] py-3 px-2 rounded-[15px] 
@@ -44,14 +46,14 @@ const PackageItem = (props) => {
           Delivery Time: <span>{props.time}</span>
         </b>
       </div>
-      <a
-        href="#"
+      <Link
+        href={`/services/${props.id}`}
         className="inline-flex items-center justify-center px-5 py-3
          text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg
           lg:group-hover:text-white lg:group-hover:border-gray-600 lg:hover:bg-[#7744d9]"
       >
         Purchase Now
-      </a>
+      </Link>
     </div>
   );
 };
