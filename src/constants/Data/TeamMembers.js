@@ -3,10 +3,11 @@ import sagar from "../Images/Team Members/Sagar.png";
 import shuja from "../Images/Team Members/Shuja Saqib.png";
 import ashim from "../Images/Team Members/Ashim.png";
 import dip from "../Images/Team Members/Dip.png";
+import alek from "../Images/Team Members/Aleksandre.jpg";
 import user from "../Images/Team Members/User.png";
 export const TeamMembersList = [
   {
-    image: user,
+    image: alek,
     name: "Aleksandre Gorgisheli",
     role: "CEO",
   },
