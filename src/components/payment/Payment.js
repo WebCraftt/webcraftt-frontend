@@ -6,7 +6,11 @@ const Payment = ({ service }) => {
   const priceWithoutSymbol = priceWithSymbol.replace("$", "");
   const numericPrice = parseInt(priceWithoutSymbol);
 
-  const [orderID, setOrderID] = useState(null); 
+  const paypulClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
+
+  console.log(paypulClientId, "paypulClientId+++++");
+
+  const [orderID, setOrderID] = useState(null);
 
   const createOrder = (data, actions) => {
     const orderData = {
@@ -28,7 +32,7 @@ const Payment = ({ service }) => {
     })
       .then((response) => response.json())
       .then((order) => {
-        setOrderID(order?.data?.jsonResponse?.id); 
+        setOrderID(order?.data?.jsonResponse?.id);
         return order?.data?.jsonResponse?.id;
       });
   };
@@ -43,7 +47,7 @@ const Payment = ({ service }) => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            orderID: orderID, 
+            orderID: orderID,
           }),
         }
       )
@@ -57,8 +61,7 @@ const Payment = ({ service }) => {
   return (
     <PayPalScriptProvider
       options={{
-        clientId:
-          "AU2Qa9yDASjHGwm1E0oLS9_BqnTdBPNe0GgRcW6RXmLlYF3pdYUC4HAkDOVzOHzMXyJJ50wm2kThqWhc",
+        clientId: "AUDJmOZet_TVRFPPnFsKEjXSqOxPmZPj06HQ82JtzjwtdOIxtxQ4Qz18ukd4A0Eyw1NU8l33UA8tGGGi",
         currency: "USD",
       }}
     >
