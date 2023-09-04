@@ -1,6 +1,6 @@
 import React from "react";
 import TeamCard from "./TeamCard";
-import { TeamMembersList } from "../constants/Data/TeamMembers";
+import { SalesTeamList, TeamMembersList } from "../constants/Data/TeamMembers";
 import Carousel from "react-multi-carousel";
 
 const Team = () => {
@@ -84,7 +84,31 @@ const Team = () => {
                 image={member.image}
                 name={member.name}
                 role={member.role}
-                email={member.email}
+                desc={member.desc}
+                linkedIn={member.linkedIn}
+                github={member.github}
+                instagram={member.instagram}
+                twitter={member.twitter}
+              />
+            );
+          })}
+        </Carousel>
+
+        {/* ---------------- Sales Team ---------------------*/}
+        <Carousel
+          {...carouselOptions}
+          className="max-w-screen-xl py-8 mx-auto text-center md:py-16"
+        >
+          {SalesTeamList.map((member, key) => {
+            return (
+              <TeamCard
+                key={key}
+                image={member.image}
+                name={member.name}
+                role={member.role}
+                linkedIn={member.linkedIn}
+                instagram={member.instagram}
+                twitter={member.twitter}
               />
             );
           })}
