@@ -61,7 +61,7 @@ const Payment = ({ service }) => {
   return (
     <PayPalScriptProvider
       options={{
-        clientId: "AUDJmOZet_TVRFPPnFsKEjXSqOxPmZPj06HQ82JtzjwtdOIxtxQ4Qz18ukd4A0Eyw1NU8l33UA8tGGGi",
+        clientId: paypulClientId,
         currency: "USD",
       }}
     >
