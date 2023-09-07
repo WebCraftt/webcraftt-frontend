@@ -23,7 +23,7 @@ const Payment = ({ service }) => {
       ],
     };
 
-    return fetch("http://localhost:8000/api/v1/payment/create-order", {
+    return fetch("https://webcraft-server.vercel.app/api/v1/payment/create-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -40,7 +40,7 @@ const Payment = ({ service }) => {
   const onApprove = async (data, actions) => {
     return actions.order.capture().then((details) => {
       return fetch(
-        `http://localhost:8000/api/v1/payment/create/${orderID}/capture`,
+        `https://webcraft-server.vercel.app/api/v1/payment/create/${orderID}/capture`,
         {
           method: "POST",
           headers: {
