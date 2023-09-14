@@ -6,7 +6,11 @@ const Payment = ({ service }) => {
   const priceWithoutSymbol = priceWithSymbol.replace("$", "");
   const numericPrice = parseInt(priceWithoutSymbol);
 
-  const [orderID, setOrderID] = useState(null); 
+  const paypulClientId = process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID;
+
+  console.log(paypulClientId, "paypulClientId+++++");
+
+  const [orderID, setOrderID] = useState(null);
 
   const createOrder = (data, actions) => {
     const orderData = {
@@ -19,7 +23,7 @@ const Payment = ({ service }) => {
       ],
     };
 
-    return fetch("http://localhost:8000/api/v1/payment/create-order", {
+    return fetch("https://webcraft-server.vercel.app/api/v1/payment/create-order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +32,7 @@ const Payment = ({ service }) => {
     })
       .then((response) => response.json())
       .then((order) => {
-        setOrderID(order?.data?.jsonResponse?.id); 
+        setOrderID(order?.data?.jsonResponse?.id);
         return order?.data?.jsonResponse?.id;
       });
   };
@@ -36,14 +40,14 @@ const Payment = ({ service }) => {
   const onApprove = async (data, actions) => {
     return actions.order.capture().then((details) => {
       return fetch(
-        `http://localhost:8000/api/v1/payment/create/${orderID}/capture`,
+        `https://webcraft-server.vercel.app/api/v1/payment/create/${orderID}/capture`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            orderID: orderID, 
+            orderID: orderID,
           }),
         }
       )
@@ -57,8 +61,7 @@ const Payment = ({ service }) => {
   return (
     <PayPalScriptProvider
       options={{
-        clientId:
-          "AU2Qa9yDASjHGwm1E0oLS9_BqnTdBPNe0GgRcW6RXmLlYF3pdYUC4HAkDOVzOHzMXyJJ50wm2kThqWhc",
+        clientId: paypulClientId,
         currency: "USD",
       }}
     >
