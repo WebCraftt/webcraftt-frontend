@@ -1,6 +1,6 @@
 import React from "react";
 import TeamCard from "./TeamCard";
-import { SalesTeamList, TeamMembersList } from "../constants/Data/TeamMembers";
+import { TeamMembersList } from "../constants/Data/TeamMembers";
 import Carousel from "react-multi-carousel";
 
 const Team = () => {
@@ -95,7 +95,7 @@ const Team = () => {
         </Carousel>
 
         {/* ---------------- Sales Team ---------------------*/}
-        <Carousel
+        {/* <Carousel
           {...carouselOptions}
           className="max-w-screen-xl py-8 mx-auto text-center md:py-16"
         >
@@ -112,14 +112,14 @@ const Team = () => {
               />
             );
           })}
-        </Carousel>
+        </Carousel> */}
       </div>
-      <div
+      {/* <div
         className="mb-4 text-center m-auto w-fit px-5 py-3 border border-[#9dd4e8] rounded-lg
           lg:group-hover:text-white lg:hover:border-none lg:hover:bg-[#7744d9]"
       >
         <a href="#">See All Members</a>
-      </div>
+      </div> */}
     </div>
   );
 };

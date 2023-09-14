@@ -5,7 +5,7 @@ import Link from "next/link";
 const TeamCard = (props) => {
   return (
     <div
-      className="group flex flex-col h-[460px] max-w-[350px]
+      className="group flex flex-col h-[460px] max-w-[330px]
       border border-[#9dd4e8] rounded-[15px] 
       my-4 py-6 px-6
       m-auto
