@@ -47,7 +47,9 @@ const Team = () => {
                   image={member.image}
                   name={member.name}
                   role={member.role}
-                  email={member.email}
+                  linkedIn={member.linkedIn}
+                  twitter={member.twitter}
+                  desc={member.desc}
                 />
               );
             })}
@@ -66,7 +68,9 @@ const Team = () => {
                   image={member.image}
                   name={member.name}
                   role={member.role}
-                  email={member.email}
+                  desc={member.desc}
+                  linkedIn={member.linkedIn}
+                  twitter={member.twitter}
                 />
               );
             })}
@@ -85,9 +89,9 @@ const Team = () => {
                 name={member.name}
                 role={member.role}
                 desc={member.desc}
-                linkedIn={member.linkedIn}
                 github={member.github}
                 instagram={member.instagram}
+                linkedIn={member.linkedIn}
                 twitter={member.twitter}
               />
             );
