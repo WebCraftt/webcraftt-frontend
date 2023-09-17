@@ -47,7 +47,9 @@ const Team = () => {
                   image={member.image}
                   name={member.name}
                   role={member.role}
-                  email={member.email}
+                  linkedIn={member.linkedIn}
+                  twitter={member.twitter}
+                  desc={member.desc}
                 />
               );
             })}
@@ -66,7 +68,9 @@ const Team = () => {
                   image={member.image}
                   name={member.name}
                   role={member.role}
-                  email={member.email}
+                  desc={member.desc}
+                  linkedIn={member.linkedIn}
+                  twitter={member.twitter}
                 />
               );
             })}
@@ -84,18 +88,42 @@ const Team = () => {
                 image={member.image}
                 name={member.name}
                 role={member.role}
-                email={member.email}
+                desc={member.desc}
+                github={member.github}
+                instagram={member.instagram}
+                linkedIn={member.linkedIn}
+                twitter={member.twitter}
               />
             );
           })}
         </Carousel>
+
+        {/* ---------------- Sales Team ---------------------*/}
+        {/* <Carousel
+          {...carouselOptions}
+          className="max-w-screen-xl py-8 mx-auto text-center md:py-16"
+        >
+          {SalesTeamList.map((member, key) => {
+            return (
+              <TeamCard
+                key={key}
+                image={member.image}
+                name={member.name}
+                role={member.role}
+                linkedIn={member.linkedIn}
+                instagram={member.instagram}
+                twitter={member.twitter}
+              />
+            );
+          })}
+        </Carousel> */}
       </div>
-      <div
+      {/* <div
         className="mb-4 text-center m-auto w-fit px-5 py-3 border border-[#9dd4e8] rounded-lg
           lg:group-hover:text-white lg:hover:border-none lg:hover:bg-[#7744d9]"
       >
         <a href="#">See All Members</a>
-      </div>
+      </div> */}
     </div>
   );
 };
